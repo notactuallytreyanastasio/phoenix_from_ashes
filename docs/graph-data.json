@@ -130,7 +130,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:41:59.694531-05:00",
       "updated_at": "2025-12-15T21:41:59.694531-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"confidence\":95}"
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"commit\":\"041a3c65405997850af23a963b3fd1d7f0597a90\"}"
     },
     {
       "id": 13,
@@ -174,7 +174,216 @@
       "status": "pending",
       "created_at": "2025-12-15T21:42:21.432141-05:00",
       "updated_at": "2025-12-15T21:42:21.432141-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"Phoenix's killer feature - real-time WebSocket abstraction that becomes framework's signature capability\"}"
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"Phoenix's killer feature - real-time WebSocket abstraction that becomes framework's signature capability\",\"commit\":\"10ac0e1b435d8868b17e661c64143691d58a4232\"}"
+    },
+    {
+      "id": 17,
+      "change_id": "76c3cbad-a1a7-4f48-a5aa-a47607d8dd3e",
+      "node_type": "action",
+      "title": "v0.3.0: Controller params as 2nd argument - API refinement (June 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:42:39.372096-05:00",
+      "updated_at": "2025-12-15T21:42:39.372096-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"commit\":\"37af2d71beb0c74e50e8a230bfe6a86f43f1efd7\"}"
+    },
+    {
+      "id": 18,
+      "change_id": "87ae825b-6937-4eac-9018-556110eedd80",
+      "node_type": "observation",
+      "title": "PR refs: github.com/phoenixframework/phoenix/pull/8 (first community PR), /pull/14 (project generator), /pull/16 (nested routes)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:42:57.945337-05:00",
+      "updated_at": "2025-12-15T21:42:57.945337-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Key early PRs: #8 darkofabijan adds resource route, #14 project generator, #16 nested routes - establishing community contribution pattern\"}"
+    },
+    {
+      "id": 19,
+      "change_id": "6cf12117-dd8f-4047-9783-9d978f549cd0",
+      "node_type": "observation",
+      "title": "José Valim joins Phoenix development (PR #144, #145 - July 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:43:10.925246-05:00",
+      "updated_at": "2025-12-15T21:43:10.925246-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"Core Elixir creator contributes performance improvements - massive validation of framework direction. PRs: github.com/phoenixframework/phoenix/pull/144, /pull/145\"}"
+    },
+    {
+      "id": 20,
+      "change_id": "2ea1d7cc-7307-4a5a-81f4-5ca377b72213",
+      "node_type": "outcome",
+      "title": "v0.11.0 - Phoenix.ConnTest introduced (Apr 7, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:45:26.200555-05:00",
+      "updated_at": "2025-12-15T21:45:26.200555-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Commit: ae986a5ec. PR #746, #747 josevalim. Testing utilities for controller tests. Generated test helpers.\",\"commit\":\"ae986a5ec320d6731267d1a092d7f311b37105a0\"}"
+    },
+    {
+      "id": 21,
+      "change_id": "c0050f27-da5c-4cfa-8556-abcf9a47bb60",
+      "node_type": "outcome",
+      "title": "v0.12.0 - Test helpers, live reload (Apr 30, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:45:28.893635-05:00",
+      "updated_at": "2025-12-15T21:45:28.893635-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"Commit: 9e94594e2. phoenix_live_reload improvements. Test helper generation.\",\"commit\":\"9e94594e256df472ca660034261129e5161965ca\"}"
+    },
+    {
+      "id": 22,
+      "change_id": "5bcaccf6-e39f-474a-bf73-96ee34f19aa4",
+      "node_type": "outcome",
+      "title": "v0.4.0 - Elixir 1.0-rc1 compatibility (Aug 30, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:46:03.457777-05:00",
+      "updated_at": "2025-12-15T21:46:03.457777-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Commit: 1f4e490f3. PRs: github.com/phoenixframework/phoenix/pull/310 (Code reloader fix). Phoenix tracks Elixir's path to 1.0 stability.\",\"commit\":\"1f4e490f33d8b240b5f29f2866e4f922eb1d2d01\"}"
+    },
+    {
+      "id": 23,
+      "change_id": "4cad003e-f29e-4334-9f68-8dcab7f98d74",
+      "node_type": "outcome",
+      "title": "v0.5.0 - Runtime config via ETS (Oct 13, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:46:05.549490-05:00",
+      "updated_at": "2025-12-15T21:46:05.549490-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Commit: 6b1168995. PRs: github.com/phoenixframework/phoenix/pull/405, /pull/410, /pull/411. Socket hooks, runtime config. Framework maturing rapidly.\",\"commit\":\"6b11689952a20584d00574fc00f22315f2a2d032\"}"
+    },
+    {
+      "id": 24,
+      "change_id": "ac3bf944-85ff-464f-bc06-cf4ef6aff6f7",
+      "node_type": "outcome",
+      "title": "v0.6.0 - PubSub, LongPolling transport (Nov 22, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:46:15.585138-05:00",
+      "updated_at": "2025-12-15T21:46:15.585138-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Commit: 5615dea00. PR: github.com/phoenixframework/phoenix/pull/419 (Topic->PubSub rename). LongPoller for WebSocket fallback.\",\"commit\":\"5615dea0083994fb6a14faab6d9ce7cffcb7870e\"}"
+    },
+    {
+      "id": 25,
+      "change_id": "3be21347-2ed6-4b28-a4a3-4c530102421c",
+      "node_type": "decision",
+      "title": "Phoenix.Endpoint Architecture (Dec 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:46:17.335424-05:00",
+      "updated_at": "2025-12-15T21:46:17.335424-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"PR: github.com/phoenixframework/phoenix/pull/517 josevalim. MAJOR: Centralize HTTP entry in Endpoint, not Router. Better OTP app structure.\"}"
+    },
+    {
+      "id": 26,
+      "change_id": "c3d57f10-0dea-49e3-8ed5-a5364ea86ddf",
+      "node_type": "outcome",
+      "title": "v0.7.0 - Endpoint introduced (Dec 9, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:46:25.490809-05:00",
+      "updated_at": "2025-12-15T21:46:25.490809-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"Commit: 0e3df20fc. Phoenix.Endpoint replaces Router as HTTP entry. config_change/3 callback. Major architectural milestone.\",\"commit\":\"0e3df20fc1a205025fd220a17fbdfab953b7787a\"}"
+    },
+    {
+      "id": 27,
+      "change_id": "ce64ea27-35f2-48f3-a4d9-1f5eaf973744",
+      "node_type": "outcome",
+      "title": "v0.8.0 - View/Template improvements (Jan 11, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:46:27.361550-05:00",
+      "updated_at": "2025-12-15T21:46:27.361550-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"Commit: 99b456908. IO data in HTML templates. Configurable template namespace. View layer refinement.\",\"commit\":\"99b45690b391a813df595704cd79e15f6226e172\"}"
+    },
+    {
+      "id": 28,
+      "change_id": "5830f948-d12f-41ba-be96-9fa06e40e96e",
+      "node_type": "outcome",
+      "title": "v0.9.0 - Phoenix.HTML extraction (Feb 12, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:47:08.427659-05:00",
+      "updated_at": "2025-12-15T21:47:08.427659-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | COMMIT: 45e83bd90343be693a4e92492b85b11aec390b92 | PRs: #600-#650 era | CHANGELOG: Phoenix.HTML extracted as separate lib, form helpers improved, error pages enhanced\",\"commit\":\"45e83bd90343be693a4e92492b85b11aec390b92\"}"
+    },
+    {
+      "id": 29,
+      "change_id": "8522dc7c-6d83-4c21-a98e-a33bc3f91edd",
+      "node_type": "outcome",
+      "title": "v0.10.0 - Ecto integration (Mar 8, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:47:09.549641-05:00",
+      "updated_at": "2025-12-15T21:47:09.549641-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | COMMIT: 39aa3e69870ebdd90d82774c933a8b117a8daaba | PRs: #700+ | CHANGELOG: Better Ecto changeset integration, model generators, API stabilizing toward 1.0\",\"commit\":\"39aa3e69870ebdd90d82774c933a8b117a8daaba\"}"
+    },
+    {
+      "id": 30,
+      "change_id": "25ba1505-c8e5-4666-9fed-32e9560cce7c",
+      "node_type": "outcome",
+      "title": "v0.13.0 - Controller/View improvements (May 11, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:47:21.401126-05:00",
+      "updated_at": "2025-12-15T21:47:21.401126-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | COMMIT: 5aa833e06b04d15908179310f2e0400b48f1961d | PRs: #800+ | CHANGELOG: Controller refinements, view layer polish, closer to 1.0\",\"commit\":\"5aa833e06b04d15908179310f2e0400b48f1961d\"}"
+    },
+    {
+      "id": 31,
+      "change_id": "a11a35ae-5fb4-4d17-a2d7-7c93a82f524f",
+      "node_type": "outcome",
+      "title": "v0.14.0 - Ecto v0.13 compatibility (Jun 29, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:47:32.385207-05:00",
+      "updated_at": "2025-12-15T21:47:32.385207-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | COMMIT: 2754f7f1e7bce63258db834c4ed85c573a8b28c5 | PRs: #991, #996 | CHANGELOG: Ecto v0.13.0 SQL sandbox, framework descriptions updated\",\"commit\":\"2754f7f1e7bce63258db834c4ed85c573a8b28c5\"}"
+    },
+    {
+      "id": 32,
+      "change_id": "4d5007e7-81c4-4ace-b205-f675bf071925",
+      "node_type": "outcome",
+      "title": "v0.15.0 - Final pre-1.0 polish (Jul 27, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:47:34.313224-05:00",
+      "updated_at": "2025-12-15T21:47:34.313224-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | COMMIT: 7c602aa4e5ac8b3ddebda521d71cecf4b4b5a63e | CHANGELOG: API stabilization, documentation improvements, preparing for 1.0 launch\",\"commit\":\"7c602aa4e5ac8b3ddebda521d71cecf4b4b5a63e\"}"
+    },
+    {
+      "id": 33,
+      "change_id": "ee634f6c-0e0b-4e94-be7b-c2af448fc144",
+      "node_type": "outcome",
+      "title": "v0.16.0 - Release candidate prep (Aug 5, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:47:47.078772-05:00",
+      "updated_at": "2025-12-15T21:47:47.078772-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | COMMIT: ed44484672734c15a3eb4d2ba6e3fa92bbc175a3 | CHANGELOG: Bug fixes, edge cases handled, community feedback incorporated\",\"commit\":\"ed44484672734c15a3eb4d2ba6e3fa92bbc175a3\"}"
+    },
+    {
+      "id": 34,
+      "change_id": "c27d7810-9d86-4759-ae36-d715e5b1b9dc",
+      "node_type": "outcome",
+      "title": "v0.17.0 - Final pre-1.0 release (Aug 19, 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:47:48.562457-05:00",
+      "updated_at": "2025-12-15T21:47:48.562457-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | COMMIT: 296a6e99d9a3eb05a47b012fef2d79db678511a2 | CHANGELOG: Last breaking changes before 1.0, API freeze imminent\",\"commit\":\"296a6e99d9a3eb05a47b012fef2d79db678511a2\"}"
+    },
+    {
+      "id": 35,
+      "change_id": "3596920d-1449-4d4d-8aa1-093f13ca8a6d",
+      "node_type": "outcome",
+      "title": "TEST v1.0 - Production Ready",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:48:17.974490-05:00",
+      "updated_at": "2025-12-15T21:48:17.974490-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"24c0a0eff23a3fa991bcfc0c2c8e3cd89e498830\",\"confidence\":99,\"prompt\":\"REPO: phoenixframework/phoenix | PRs: #1000+ | CHANGELOG: First production release!\"}"
     }
   ],
   "edges": [
@@ -364,6 +573,193 @@
       "weight": 1.0,
       "rationale": "Ships!",
       "created_at": "2025-12-15T21:42:23.155412-05:00"
+    },
+    {
+      "id": 18,
+      "from_node_id": 12,
+      "to_node_id": 18,
+      "from_change_id": "cf4e04a2-3f17-42ef-ae7f-f4ef772fefe0",
+      "to_change_id": "87ae825b-6937-4eac-9018-556110eedd80",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "PR context",
+      "created_at": "2025-12-15T21:42:58.888230-05:00"
+    },
+    {
+      "id": 19,
+      "from_node_id": 16,
+      "to_node_id": 17,
+      "from_change_id": "1028b8f2-78ab-421f-a463-0d5e7710b942",
+      "to_change_id": "76c3cbad-a1a7-4f48-a5aa-a47607d8dd3e",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "API evolution",
+      "created_at": "2025-12-15T21:43:09.801076-05:00"
+    },
+    {
+      "id": 20,
+      "from_node_id": 17,
+      "to_node_id": 19,
+      "from_change_id": "76c3cbad-a1a7-4f48-a5aa-a47607d8dd3e",
+      "to_change_id": "6cf12117-dd8f-4047-9783-9d978f549cd0",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Major milestone",
+      "created_at": "2025-12-15T21:43:11.759610-05:00"
+    },
+    {
+      "id": 21,
+      "from_node_id": 19,
+      "to_node_id": 22,
+      "from_change_id": "6cf12117-dd8f-4047-9783-9d978f549cd0",
+      "to_change_id": "5bcaccf6-e39f-474a-bf73-96ee34f19aa4",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:46:04.253474-05:00"
+    },
+    {
+      "id": 22,
+      "from_node_id": 22,
+      "to_node_id": 23,
+      "from_change_id": "5bcaccf6-e39f-474a-bf73-96ee34f19aa4",
+      "to_change_id": "4cad003e-f29e-4334-9f68-8dcab7f98d74",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:46:15.566808-05:00"
+    },
+    {
+      "id": 23,
+      "from_node_id": 23,
+      "to_node_id": 24,
+      "from_change_id": "4cad003e-f29e-4334-9f68-8dcab7f98d74",
+      "to_change_id": "ac3bf944-85ff-464f-bc06-cf4ef6aff6f7",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:46:17.314998-05:00"
+    },
+    {
+      "id": 24,
+      "from_node_id": 24,
+      "to_node_id": 25,
+      "from_change_id": "ac3bf944-85ff-464f-bc06-cf4ef6aff6f7",
+      "to_change_id": "3be21347-2ed6-4b28-a4a3-4c530102421c",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Architecture evolution",
+      "created_at": "2025-12-15T21:46:25.466992-05:00"
+    },
+    {
+      "id": 25,
+      "from_node_id": 25,
+      "to_node_id": 26,
+      "from_change_id": "3be21347-2ed6-4b28-a4a3-4c530102421c",
+      "to_change_id": "c3d57f10-0dea-49e3-8ed5-a5364ea86ddf",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Ships!",
+      "created_at": "2025-12-15T21:46:27.338796-05:00"
+    },
+    {
+      "id": 26,
+      "from_node_id": 26,
+      "to_node_id": 27,
+      "from_change_id": "c3d57f10-0dea-49e3-8ed5-a5364ea86ddf",
+      "to_change_id": "ce64ea27-35f2-48f3-a4d9-1f5eaf973744",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:08.405262-05:00"
+    },
+    {
+      "id": 27,
+      "from_node_id": 27,
+      "to_node_id": 28,
+      "from_change_id": "ce64ea27-35f2-48f3-a4d9-1f5eaf973744",
+      "to_change_id": "5830f948-d12f-41ba-be96-9fa06e40e96e",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:09.529479-05:00"
+    },
+    {
+      "id": 28,
+      "from_node_id": 28,
+      "to_node_id": 29,
+      "from_change_id": "5830f948-d12f-41ba-be96-9fa06e40e96e",
+      "to_change_id": "8522dc7c-6d83-4c21-a98e-a33bc3f91edd",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:19.292602-05:00"
+    },
+    {
+      "id": 29,
+      "from_node_id": 29,
+      "to_node_id": 20,
+      "from_change_id": "8522dc7c-6d83-4c21-a98e-a33bc3f91edd",
+      "to_change_id": "2ea1d7cc-7307-4a5a-81f4-5ca377b72213",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:19.300470-05:00"
+    },
+    {
+      "id": 30,
+      "from_node_id": 20,
+      "to_node_id": 21,
+      "from_change_id": "2ea1d7cc-7307-4a5a-81f4-5ca377b72213",
+      "to_change_id": "c0050f27-da5c-4cfa-8556-abcf9a47bb60",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:20.245109-05:00"
+    },
+    {
+      "id": 31,
+      "from_node_id": 21,
+      "to_node_id": 30,
+      "from_change_id": "c0050f27-da5c-4cfa-8556-abcf9a47bb60",
+      "to_change_id": "25ba1505-c8e5-4666-9fed-32e9560cce7c",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:32.368041-05:00"
+    },
+    {
+      "id": 32,
+      "from_node_id": 30,
+      "to_node_id": 31,
+      "from_change_id": "25ba1505-c8e5-4666-9fed-32e9560cce7c",
+      "to_change_id": "a11a35ae-5fb4-4d17-a2d7-7c93a82f524f",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:34.296677-05:00"
+    },
+    {
+      "id": 33,
+      "from_node_id": 31,
+      "to_node_id": 32,
+      "from_change_id": "a11a35ae-5fb4-4d17-a2d7-7c93a82f524f",
+      "to_change_id": "4d5007e7-81c4-4ace-b205-f675bf071925",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:47.059071-05:00"
+    },
+    {
+      "id": 34,
+      "from_node_id": 32,
+      "to_node_id": 33,
+      "from_change_id": "4d5007e7-81c4-4ace-b205-f675bf071925",
+      "to_change_id": "ee634f6c-0e0b-4e94-be7b-c2af448fc144",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-15T21:47:48.541220-05:00"
     }
   ]
 }

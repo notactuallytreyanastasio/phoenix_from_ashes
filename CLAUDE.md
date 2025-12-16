@@ -189,9 +189,64 @@ deciduous add decision "Major architectural decision" -c 85 -p "Discussion: gith
 deciduous add observation "PR #123: Feature by @contributor" -c 80 -p "Full URL and description"
 ```
 
+### Using --commit Flag for External Commits
+
+**The --commit flag accepts ANY git hash, even from external repos!** Use this to properly link Phoenix commits:
+
+```bash
+# ALWAYS use --commit with the release's actual commit hash
+deciduous add outcome "vX.Y.0 - Feature (Date)" -c 90 \
+  --commit <full_40_char_hash> \
+  -p "REPO: phoenixframework/phoenix | PRs: #123, #456 | CHANGELOG: <key changes>"
+
+# Example with real Phoenix commit:
+deciduous add outcome "v1.0.0 - Production Ready (Aug 28, 2015)" -c 99 \
+  --commit 24c0a0eff23a3fa991bcfc0c2c8e3cd89e498830 \
+  -p "REPO: phoenixframework/phoenix | PRs: #1000+ | CHANGELOG: First production release!"
+```
+
+**Getting commit hashes from Phoenix repo:**
+```bash
+cd /path/to/phoenix
+git log -1 --format="%H" v1.0.0  # Get full hash for any tag
+```
+
+**Field definitions:**
+- `REPO:` - The GitHub repository being documented (always phoenixframework/phoenix for this museum)
+- `COMMIT:` - Full commit hash of the release tag (get via `git log -1 --format="%H" vX.Y.0`)
+- `PRs:` - Key pull request numbers (prefix with # for GitHub links)
+- `CHANGELOG:` - Summary of key changes
+
 ### Sources to Check for Each Release
 
 1. `git log vX.Y.0..vX.Z.0` - commits between releases
 2. `gh pr list --state merged --search "created:YYYY-MM-DD..YYYY-MM-DD"` - PRs in timeframe
 3. GitHub release notes when available
 4. CHANGELOG.md in Phoenix repo
+
+### Retroactively Adding Commits to Existing Nodes
+
+If you created nodes without --commit, you can update them directly in the database:
+
+```bash
+# Add commit to existing node (SQLite JSON function)
+sqlite3 .deciduous/deciduous.db "UPDATE decision_nodes SET metadata_json = json_set(metadata_json, '\$.commit', '<full_40_char_hash>') WHERE id = <node_id>;"
+
+# Example: Add v0.1.1 commit to node 12
+sqlite3 .deciduous/deciduous.db "UPDATE decision_nodes SET metadata_json = json_set(metadata_json, '\$.commit', '041a3c65405997850af23a963b3fd1d7f0597a90') WHERE id = 12;"
+
+# Batch update multiple nodes:
+sqlite3 .deciduous/deciduous.db "
+UPDATE decision_nodes SET metadata_json = json_set(metadata_json, '\$.commit', '<hash1>') WHERE id = 1;
+UPDATE decision_nodes SET metadata_json = json_set(metadata_json, '\$.commit', '<hash2>') WHERE id = 2;
+"
+```
+
+**IMPORTANT:** After direct database updates, run `deciduous sync` to regenerate the JSON export.
+
+### Graph Viewer Display
+
+The web viewer parses `metadata_json.prompt` to display reference info. Format prompts consistently so future viewers can extract and linkify:
+- GitHub PR links: `#123` → `https://github.com/phoenixframework/phoenix/pull/123`
+- Commit links: 40-char hex → `https://github.com/phoenixframework/phoenix/commit/<hash>`
+- The `commit` field in metadata_json is also displayed when present
