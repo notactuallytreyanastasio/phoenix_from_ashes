@@ -2133,6 +2133,39 @@
       "created_at": "2025-12-16T00:36:24.152325-05:00",
       "updated_at": "2025-12-16T00:36:24.152325-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":80,\"prompt\":\"@rylev: 'Need to access body as raw string. Once body consumed, future reads return empty.' Chris provides workaround: 'put_private(conn, :my_app_body, read_body(conn)) in :before pipeline.' 61 comments - shows complexity of body handling.\"}"
+    },
+    {
+      "id": 196,
+      "change_id": "84a55341-e011-4c1b-8478-187f0a9db84e",
+      "node_type": "observation",
+      "title": "Issue #1165: Vim/Syntastic code reload race condition",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:37:07.286575-05:00",
+      "updated_at": "2025-12-16T00:37:07.286575-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@christopherslee: 'Server not reloading code.' Chris nails it: 'What editor? Syntastic causes issues - checks for syntax errors and messes with ctime/mtime.' The plugin recompiles behind scenes, so when request comes in, mix sees files already compiled. Years of workarounds documented.\"}"
+    },
+    {
+      "id": 197,
+      "change_id": "7869d555-04dc-45b9-b27d-5a27e3625c28",
+      "node_type": "decision",
+      "title": "Issue #1054: Content negotiation - pipelines vs format checking",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:37:08.350812-05:00",
+      "updated_at": "2025-12-16T00:37:08.350812-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@FND: 'Not possible to perform standard content negotiation without compromising.' Chris: 'You could create a plug that dispatches based on accept header.' José: 'Dont mix pipelines with content negotiation. Make things conditional on format inside the pipeline.' Simple > Complex.\"}"
+    },
+    {
+      "id": 198,
+      "change_id": "963bcdaa-550b-4944-969d-9f5de2424d75",
+      "node_type": "observation",
+      "title": "Issue #861: Session in tests - @valo discovers init_test_session",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:37:17.605566-05:00",
+      "updated_at": "2025-12-16T00:37:17.605566-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":80,\"prompt\":\"@crismali confused about session in tests. @gjaldon: 'Call get/2 first, then session functions work.' @valo finds better solution: 'Use Plug.Test.init_test_session/2' - 51 thumbs up. José: 'init_test_session was added to Plug later :D'\"}"
     }
   ],
   "edges": [
