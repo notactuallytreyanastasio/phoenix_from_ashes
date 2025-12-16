@@ -2485,6 +2485,72 @@
       "created_at": "2025-12-16T01:01:45.527399-05:00",
       "updated_at": "2025-12-16T01:01:45.527399-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix_live_view | PR: #2763 | Commit: 56697d304e7a2bba960e71c3ee3c4101af4fb769 | +1,428 lines. Chris adds async assigns - elegant primitives for loading async data in LiveViews without blocking render. @jeregrine: 'really great work buddy...overall looking fire.' @aj-foster: 'Love to see support for this in LiveView.' Simplifies handling of slow database queries, API calls, etc. with built-in loading/error states.\"}"
+    },
+    {
+      "id": 228,
+      "change_id": "e575c722-f68f-4b23-850f-0d31dd3d65a9",
+      "node_type": "action",
+      "title": "PR #1661: Introduce slots for component composition (@msaraiva, Oct 2021)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:09:52.061808-05:00",
+      "updated_at": "2025-12-16T01:09:52.061808-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix_live_view | PR: #1661 | Commit: d94585b10c16eb7e1d7d865bd9eb0efcec7aa684 | +1,328 lines. Marlus introduces slots - named content areas for components. Example: <.modal><:header>Title</:header>Body<:footer>Buttons</:footer></.modal>. Enables Vue/React-style component composition in Phoenix. Part of the HEEx ecosystem evolution.\"}"
+    },
+    {
+      "id": 229,
+      "change_id": "aa69e972-072e-4bbb-8307-8ea55f145321",
+      "node_type": "action",
+      "title": "PR #2073: Declarative slots & literal type validations (@connorlay, Aug 2022)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:10:05.826722-05:00",
+      "updated_at": "2025-12-16T01:10:05.826722-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix_live_view | PR: #2073 | Commit: 4f0680c13376e97f33071b19dd21de6ab9538742 | +2,158 lines. @connorlay (Clay) adds declarative slot macros with compile-time type validation. Features: slot auto-generating docs, slot attr defaults, global slot attrs. Brings React PropTypes-style validation to Phoenix components. José's approval: rainbow hearts.\"}"
+    },
+    {
+      "id": 230,
+      "change_id": "09982ccb-d980-4d9a-9ddc-ff0312562155",
+      "node_type": "action",
+      "title": "PR #4077: Add phx.gen.auth generator (@aaronrenner, Nov 2020)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:10:56.555697-05:00",
+      "updated_at": "2025-12-16T01:10:56.555697-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #4077 | Commit: 31c75ebe4437e7f7d172a70155f322b85aa4032c | +4,544 lines\\\\! @aaronrenner brings phx_gen_auth into Phoenix core. José's review: 'just some minor comments but otherwise it looks great to me\\\\!' Generates complete authentication system with: registration, login, password reset, email confirmation. Security-focused with bcrypt, secure tokens, and rate limiting. A major developer experience win.\"}"
+    },
+    {
+      "id": 231,
+      "change_id": "e592ad55-b0f1-4e18-bda5-15c9104d8b8f",
+      "node_type": "decision",
+      "title": "PR #517: Add Phoenix.Endpoint - central application entry point (@josevalim, Dec 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:12:03.880637-05:00",
+      "updated_at": "2025-12-16T01:12:03.880637-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #517 | Commit: 0d710bc5838f4b67db5718be1bdbb6a8040b86e7 | +900 lines. José introduces Phoenix.Endpoint - the central entry point replacing router-level config. Discussion: Chris proposes 'plug :router' for multiple routers support, Lance notes umbrella project coordination. José writes detailed v0.7.0 migration guide in PR comments. A MAJOR architectural shift - config moves from Router to Endpoint.\"}"
+    },
+    {
+      "id": 232,
+      "change_id": "b2ab1dfc-b909-4568-a91b-7c9c516be923",
+      "node_type": "action",
+      "title": "PR #431: Transport adapter contract + Long-Polling (@chrismccord, Nov 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:12:13.924744-05:00",
+      "updated_at": "2025-12-16T01:12:13.924744-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #431 | Commit: 60dc5122830e704754279fea0f0dfad1727913ae | +1,659 lines. Chris + @jeregrine implement transport abstraction. @ericmj raises security concern: 'A PID is stored in a cookie' - Chris: 'cookie is encrypted by default, and always signed.' Discussion of cross-domain long polling, distributed Erlang fallbacks. José suggests HashDict of Phoenix.Socket keyed by {channel, topic}. Foundational infrastructure for Channels.\"}"
+    },
+    {
+      "id": 233,
+      "change_id": "60bacaae-a79a-4d70-8321-fc72401b4600",
+      "node_type": "decision",
+      "title": "PR #384: Router Pipelines - composable plug stacks (@josevalim, Oct 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:12:47.849036-05:00",
+      "updated_at": "2025-12-16T01:12:47.849036-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #384 | Commit: 577fe7fae9451f9861b2c81727061f4ef84bde42 | +819 lines. José introduces pipeline macro - named groups of plugs that can be applied to route scopes. Chris: 'I really love this feature\\\\! Thanks @josevalim <3 <3 <3'. @jeregrine shares the design gist. Changes controllers back to 'plug' from 'before_action'. Foundational for Phoenix's middleware architecture.\"}"
     }
   ],
   "edges": [
@@ -4412,6 +4478,61 @@
       "weight": 1.0,
       "rationale": "Streams followed by async assigns for LiveView DX",
       "created_at": "2025-12-16T01:01:53.225612-05:00"
+    },
+    {
+      "id": 176,
+      "from_node_id": 222,
+      "to_node_id": 228,
+      "from_change_id": "27f55ea8-eba3-435a-a045-62357d2206b4",
+      "to_change_id": "e575c722-f68f-4b23-850f-0d31dd3d65a9",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "HEEx templates enabled slots for component composition",
+      "created_at": "2025-12-16T01:10:14.698444-05:00"
+    },
+    {
+      "id": 177,
+      "from_node_id": 228,
+      "to_node_id": 229,
+      "from_change_id": "e575c722-f68f-4b23-850f-0d31dd3d65a9",
+      "to_change_id": "aa69e972-072e-4bbb-8307-8ea55f145321",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Slots evolved into declarative slot macros",
+      "created_at": "2025-12-16T01:10:14.705804-05:00"
+    },
+    {
+      "id": 178,
+      "from_node_id": 212,
+      "to_node_id": 230,
+      "from_change_id": "462d4e53-c335-488f-ad9d-b38aec49d201",
+      "to_change_id": "09982ccb-d980-4d9a-9ddc-ff0312562155",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Context generators led to phx.gen.auth",
+      "created_at": "2025-12-16T01:11:05.719121-05:00"
+    },
+    {
+      "id": 179,
+      "from_node_id": 232,
+      "to_node_id": 231,
+      "from_change_id": "b2ab1dfc-b909-4568-a91b-7c9c516be923",
+      "to_change_id": "e592ad55-b0f1-4e18-bda5-15c9104d8b8f",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Transport layer led to Endpoint architecture",
+      "created_at": "2025-12-16T01:12:30.046765-05:00"
+    },
+    {
+      "id": 180,
+      "from_node_id": 231,
+      "to_node_id": 165,
+      "from_change_id": "e592ad55-b0f1-4e18-bda5-15c9104d8b8f",
+      "to_change_id": "4f147730-6a9e-477a-af1c-eb1b57d85955",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Endpoint enabled PubSub adapter design",
+      "created_at": "2025-12-16T01:12:30.057254-05:00"
     }
   ],
   "config": {
