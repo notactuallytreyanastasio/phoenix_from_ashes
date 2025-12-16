@@ -2243,6 +2243,28 @@
       "created_at": "2025-12-16T00:40:49.186025-05:00",
       "updated_at": "2025-12-16T00:40:49.186025-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"'Document and spec everything in Phoenix.Template. Optimize Phoenix.HTML.Safe protocol. Simplify code template engines must implement. Add format encoders, .exs engine and .json encoder.' Part of v0.6 work.\"}"
+    },
+    {
+      "id": 206,
+      "change_id": "60bf8522-f846-4263-99f3-23fe471fbeb2",
+      "node_type": "observation",
+      "title": "Issue #629: Origin header checking for transport security",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:41:23.001971-05:00",
+      "updated_at": "2025-12-16T00:41:23.001971-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@josevalim opens after PR #626: 'This makes me strongly think we should start checking origin headers. Could cause issues as channel requests go through whole plug pipeline. Ideally we want channel requests to short-circuit early.' Security-first mindset.\"}"
+    },
+    {
+      "id": 207,
+      "change_id": "eff198b8-18d7-4e8c-bbf8-0f07588aa231",
+      "node_type": "action",
+      "title": "Issue #235: Elixir Logger adoption - improve request formatting",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:41:44.947727-05:00",
+      "updated_at": "2025-12-16T00:41:44.947727-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@chrismccord: 'Use Elixir Logger and improve formatting of requests.' Moving from custom logging to Elixir's built-in Logger. Aligning Phoenix with Elixir ecosystem patterns.\"}"
     }
   ],
   "edges": [
