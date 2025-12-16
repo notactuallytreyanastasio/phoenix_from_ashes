@@ -2056,6 +2056,50 @@
       "created_at": "2025-12-16T00:33:06.932945-05:00",
       "updated_at": "2025-12-16T00:33:06.932945-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"@josevalim: 'Uses plug route parsing, optimizes named helpers, refactors around Route struct, allows async tests. Requires Elixir 1.0.' Chris: '1,201 additions and 1,600 deletions - Massive first contribution\\\\! ❤️❤️❤️' @jeregrine: 'Learning lots reviewing.' Elixir creator goes deep on Phoenix.\"}"
+    },
+    {
+      "id": 189,
+      "change_id": "eccae0b7-edf2-48a3-945e-2df13a9bee3c",
+      "node_type": "observation",
+      "title": "PR #82: @patrickdet adds Travis CI - early quality gates",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:33:57.834995-05:00",
+      "updated_at": "2025-12-16T00:33:57.834995-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"'This way feature branches and all pull requests get tested, which makes it easier to accept pull requests.' CI culture from the start. @patrickdet (Darko Fabijan) - early core contributor.\"}"
+    },
+    {
+      "id": 190,
+      "change_id": "2d5614bb-100e-4321-90d0-1a00aa49ba3d",
+      "node_type": "decision",
+      "title": "Issue #164: Directory structure debate - MVC conventions",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:34:19.277392-05:00",
+      "updated_at": "2025-12-16T00:34:19.277392-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@batwicket: 'Make directory structure consistent with MVC pattern.' Chris: 'We have such a directory today. priv is an Erlang convention for non-source files.' @glesica: 'relationship between views/templates/layouts seems magical.' Chris: 'proper guides can clear this up.' Phoenix keeps templates separate from views - precompiled into Views.\"}"
+    },
+    {
+      "id": 191,
+      "change_id": "8eadbf9d-1a24-42b9-870a-19def3f45c5f",
+      "node_type": "decision",
+      "title": "Issue #204: Conditional plug based on action name",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:34:38.828243-05:00",
+      "updated_at": "2025-12-16T00:34:38.828243-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@chrismccord braindumps: 'Pure Plug approach - Only/Except Plugs or Actions Plug.' José: 'The biggest problem with pure plug is you cannot use it for private functions, and thats a deal breaker.' Shows how José's constraints push API design.\"}"
+    },
+    {
+      "id": 192,
+      "change_id": "d2dba1cf-4c5c-491b-896f-2ca627f19c28",
+      "node_type": "observation",
+      "title": "Issue #402: NewRelic vs Exometer - production monitoring debate",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:35:01.553134-05:00",
+      "updated_at": "2025-12-16T00:35:01.553134-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@mschae: 'Close to putting first phoenix app into production\\\\!' @thawatchai: 'So far it outperforms the existing node app\\\\!' @mschae: 'Never got NewRelic to work - secretive wire protocol. I highly recommend Exometer. Remember my ElixirConf claim: you dont want monitoring to take down your app.' Early production war stories.\"}"
     }
   ],
   "edges": [
