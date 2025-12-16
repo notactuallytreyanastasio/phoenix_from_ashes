@@ -3816,6 +3816,72 @@
       "created_at": "2025-12-16T02:35:25.369953-05:00",
       "updated_at": "2025-12-16T02:35:25.369953-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #5725 | Fixes CSRF token fixation vulnerability in phx.gen.auth. Regenerates CSRF token on login. Security improvement for generated auth code\"}"
+    },
+    {
+      "id": 349,
+      "change_id": "1229b175-9545-4e03-b566-7ede1a2ed64e",
+      "node_type": "decision",
+      "title": "Plug as foundation (2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T02:35:51.882993-05:00",
+      "updated_at": "2025-12-16T02:35:51.882993-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"From day one, Phoenix built on Plug - Elixir's HTTP middleware specification. Chris McCord's key insight: composable middleware enables flexible request pipelines. Controllers are plugs. Endpoints are plugs. Router is plug. This composability is Phoenix's superpower\"}"
+    },
+    {
+      "id": 350,
+      "change_id": "e47d2e11-d3c7-4ecb-8160-a1e494aef273",
+      "node_type": "decision",
+      "title": "OTP process model for real-time (2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T02:35:54.089415-05:00",
+      "updated_at": "2025-12-16T02:35:54.089415-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"Each Channel connection is an Elixir process. Each connected user gets dedicated memory, can crash independently. OTP supervision ensures reliability. This process-per-connection model enables Phoenix's real-time capabilities at scale\"}"
+    },
+    {
+      "id": 351,
+      "change_id": "82e38202-602a-4924-b198-8abe1aa0ff51",
+      "node_type": "observation",
+      "title": "Phoenix's testing philosophy",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T02:36:03.439137-05:00",
+      "updated_at": "2025-12-16T02:36:03.439137-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Phoenix emphasizes testing from v0.11: ConnTest for controllers, ChannelTest for channels, DataCase for Ecto. Ecto SQL sandbox enables async tests. Generated code includes tests. 'Testing is not optional' - shaped by Elixir's testing culture\"}"
+    },
+    {
+      "id": 352,
+      "change_id": "cabd2150-37e2-47be-af95-bc6e201a1e63",
+      "node_type": "decision",
+      "title": "Convention over configuration (Rails influence)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T02:36:04.357106-05:00",
+      "updated_at": "2025-12-16T02:36:04.357106-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Phoenix embraces Rails-style conventions: web/ directory structure, controller/view naming, route helpers. But lighter weight - no heavy DSLs, explicit over implicit. Takes the good parts of Rails conventions without the magic\"}"
+    },
+    {
+      "id": 353,
+      "change_id": "23a841e0-9dd1-4acd-aaef-421503ef59e0",
+      "node_type": "observation",
+      "title": "Compile-time guarantees evolution",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T02:36:13.462779-05:00",
+      "updated_at": "2025-12-16T02:36:13.462779-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Phoenix increasingly leverages compile-time checks: Route verification (~p sigil), HEEx HTML validation, function component attr validation. Catches errors before runtime. Elixir's macro system enables this DX improvement\"}"
+    },
+    {
+      "id": 354,
+      "change_id": "4be7e79d-cb5d-42e2-a380-1dde907da00f",
+      "node_type": "observation",
+      "title": "Security improvements timeline",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T02:36:15.763516-05:00",
+      "updated_at": "2025-12-16T02:36:15.763516-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"2014: CSRF protection default. 2015: check_origin for channels. 2018: Security headers. 2020: Parameter filtering. 2024: CSRF fixation fix. 2025: Magic links, sudo mode. Each release makes Phoenix more secure by default\"}"
     }
   ],
   "edges": [
@@ -6733,6 +6799,39 @@
       "weight": 1.0,
       "rationale": "Part of web server evolution",
       "created_at": "2025-12-16T02:33:40.810924-05:00"
+    },
+    {
+      "id": 266,
+      "from_node_id": 353,
+      "to_node_id": 294,
+      "from_change_id": "23a841e0-9dd1-4acd-aaef-421503ef59e0",
+      "to_change_id": "dc566b49-98eb-4be5-8ac7-545cf5927081",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Verified routes are key example",
+      "created_at": "2025-12-16T02:36:23.051508-05:00"
+    },
+    {
+      "id": 267,
+      "from_node_id": 354,
+      "to_node_id": 331,
+      "from_change_id": "4be7e79d-cb5d-42e2-a380-1dde907da00f",
+      "to_change_id": "f78f2ab7-4ad7-4a95-9c37-3d6ad7d96116",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "CSRF was first step",
+      "created_at": "2025-12-16T02:36:24.050353-05:00"
+    },
+    {
+      "id": 268,
+      "from_node_id": 354,
+      "to_node_id": 348,
+      "from_change_id": "4be7e79d-cb5d-42e2-a380-1dde907da00f",
+      "to_change_id": "5fc84d28-866e-47b0-8aa4-b07c22a4ac39",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Recent CSRF fixation fix",
+      "created_at": "2025-12-16T02:36:25.062048-05:00"
     }
   ],
   "config": {
