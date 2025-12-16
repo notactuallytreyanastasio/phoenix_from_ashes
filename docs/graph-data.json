@@ -6832,6 +6832,116 @@
       "weight": 1.0,
       "rationale": "Recent CSRF fixation fix",
       "created_at": "2025-12-16T02:36:25.062048-05:00"
+    },
+    {
+      "id": 269,
+      "from_node_id": 33,
+      "to_node_id": 34,
+      "from_change_id": "ee634f6c-0e0b-4e94-be7b-c2af448fc144",
+      "to_change_id": "c27d7810-9d86-4759-ae36-d715e5b1b9dc",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Next release",
+      "created_at": "2025-12-16T08:17:54.204891-05:00"
+    },
+    {
+      "id": 270,
+      "from_node_id": 326,
+      "to_node_id": 24,
+      "from_change_id": "518233bf-32ae-4d8b-94b1-9fc0702692f6",
+      "to_change_id": "ac3bf944-85ff-464f-bc06-cf4ef6aff6f7",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Pipelines introduced around v0.6",
+      "created_at": "2025-12-16T08:18:03.302868-05:00"
+    },
+    {
+      "id": 271,
+      "from_node_id": 325,
+      "to_node_id": 22,
+      "from_change_id": "543d3735-5ccb-48fc-8915-0a770ca33dbb",
+      "to_change_id": "5bcaccf6-e39f-474a-bf73-96ee34f19aa4",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Elixir 1.0 for v0.4",
+      "created_at": "2025-12-16T08:18:04.159328-05:00"
+    },
+    {
+      "id": 272,
+      "from_node_id": 333,
+      "to_node_id": 30,
+      "from_change_id": "5442d641-a67a-4054-a4b7-f0d6e9f31bd6",
+      "to_change_id": "25ba1505-c8e5-4666-9fed-32e9560cce7c",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Resource generator for v0.13",
+      "created_at": "2025-12-16T08:18:05.841054-05:00"
+    },
+    {
+      "id": 273,
+      "from_node_id": 335,
+      "to_node_id": 32,
+      "from_change_id": "195a1b81-342a-43ae-80d6-9f9e64be4d95",
+      "to_change_id": "4d5007e7-81c4-4ace-b205-f675bf071925",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Phoenix.Token for v0.15",
+      "created_at": "2025-12-16T08:18:14.483798-05:00"
+    },
+    {
+      "id": 274,
+      "from_node_id": 336,
+      "to_node_id": 20,
+      "from_change_id": "85c34b20-5424-4ec5-8ead-e1b948b9e168",
+      "to_change_id": "2ea1d7cc-7307-4a5a-81f4-5ca377b72213",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "ChannelTest for v0.11",
+      "created_at": "2025-12-16T08:18:16.408435-05:00"
+    },
+    {
+      "id": 275,
+      "from_node_id": 332,
+      "to_node_id": 27,
+      "from_change_id": "051e868a-ef3b-4766-837f-4cf480090601",
+      "to_change_id": "ce64ea27-35f2-48f3-a4d9-1f5eaf973744",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Brunch around v0.8",
+      "created_at": "2025-12-16T08:18:17.895053-05:00"
+    },
+    {
+      "id": 276,
+      "from_node_id": 349,
+      "to_node_id": 16,
+      "from_change_id": "1229b175-9545-4e03-b566-7ede1a2ed64e",
+      "to_change_id": "1028b8f2-78ab-421f-a463-0d5e7710b942",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Plug foundation from v0.2",
+      "created_at": "2025-12-16T08:18:26.165900-05:00"
+    },
+    {
+      "id": 277,
+      "from_node_id": 350,
+      "to_node_id": 16,
+      "from_change_id": "e47d2e11-d3c7-4ecb-8160-a1e494aef273",
+      "to_change_id": "1028b8f2-78ab-421f-a463-0d5e7710b942",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "OTP model in Channels v0.2",
+      "created_at": "2025-12-16T08:18:27.477895-05:00"
+    },
+    {
+      "id": 278,
+      "from_node_id": 340,
+      "to_node_id": 286,
+      "from_change_id": "17fdd981-78d7-4eb7-8247-985b985c967d",
+      "to_change_id": "6eb35d29-a1bc-4587-9af3-c16e38fbaafa",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Elixir 1.4 requirement for v1.3",
+      "created_at": "2025-12-16T08:18:28.884404-05:00"
     }
   ],
   "config": {
