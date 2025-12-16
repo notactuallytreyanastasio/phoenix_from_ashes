@@ -3024,6 +3024,105 @@
       "created_at": "2025-12-16T01:42:49.686069-05:00",
       "updated_at": "2025-12-16T01:42:49.686069-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | Key features: lib/ directory code reloaded by default, View :path and :pattern options for wildcard templates\"}"
+    },
+    {
+      "id": 277,
+      "change_id": "161090ea-60cc-4180-9082-672224aa75d5",
+      "node_type": "action",
+      "title": "PR #4337: Asset pipeline rewrite for Webpack 5 (@bcardarella, Jun 2021)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:45:15.590940-05:00",
+      "updated_at": "2025-12-16T01:45:15.590940-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"b6b62aaebfeb5f84934fb36c668afdb0fbf202ef\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #4337 | +17,014/-8,665 lines | MASSIVE: Brian Cardarella's comprehensive asset rewrite | Separated mono-js into ES6 modules | Updated all JS deps | Added eslint for @chrismccord's style rules | Breaking changes for legacy webpack\"}"
+    },
+    {
+      "id": 278,
+      "change_id": "05b8f3dc-1aec-4df8-9de1-3249b9fbef32",
+      "node_type": "decision",
+      "title": "PR #1023: Socket handlers and socket mounts to Endpoint (@chrismccord, Jul 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:45:16.612993-05:00",
+      "updated_at": "2025-12-16T01:45:16.612993-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"16855ac1f7e514ef8e938d7db5647490a06e0c37\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #1023 | +973/-543 lines | KEY: Phoenix.Socket behaviour for auth | Motivations: 1) Skip endpoint pipeline for sockets 2) Authenticate once, set default assigns 3) Enable disconnect event to terminate all channels\"}"
+    },
+    {
+      "id": 279,
+      "change_id": "6c420ed1-abd2-4b19-b059-9dde1e89d9d6",
+      "node_type": "decision",
+      "title": "PR #594: PubSub Adapters - PG2 and Redis support (@chrismccord, Feb 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:46:10.300629-05:00",
+      "updated_at": "2025-12-16T01:46:10.300629-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"64c65324d40bca6344d3accb8eb97a445093077a\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #594 | +1,196/-1,010 lines | KEY ARCHITECTURE: Extracted pg2 into PubSub.Adapter behavior | Added Redis adapter using local pg2 + redis for multi-node | Questions: supervision strategy, adapter behavior spec, separate redis project?\"}"
+    },
+    {
+      "id": 280,
+      "change_id": "e739a579-b9bc-400b-a831-7cc277b454fc",
+      "node_type": "decision",
+      "title": "Issue #11: View layer discussion - XSS protection, {:safe, ...} origin (@chrismccord, @josevalim, Jan 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:49:02.975878-05:00",
+      "updated_at": "2025-12-16T01:49:02.975878-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":99,\"prompt\":\"REPO: phoenixframework/phoenix | Issue: #11 | The foundational discussion where José Valim proposed the {:safe, ...} tuple pattern for HTML safety. Discussed EEx, Calliope (HAML), template precompilation. José wrote: 'I would recommend to take a look at Dynamo / Chicago Boss. For development, we compile the templates into a fake module and dispatch to and reload those modules at will. For production, we compile everything.' Also discussed HTMLSafe module design with safe/concat functions.\"}"
+    },
+    {
+      "id": 281,
+      "change_id": "caa6ff30-b46a-4e1b-adda-8936e304f92e",
+      "node_type": "observation",
+      "title": "Issue #1: First Phoenix issue - Router GenServer dispatch (@chrismccord, Jan 22, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:49:04.458964-05:00",
+      "updated_at": "2025-12-16T01:49:04.458964-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | Issue: #1 | The very first issue opened in Phoenix\\\\! 'Move Router dispatch to own GenServer module. Kill on response completion.' This established the process-based approach to handling requests.\"}"
+    },
+    {
+      "id": 282,
+      "change_id": "9946c375-08b7-494a-96b6-7eeb1d52461b",
+      "node_type": "decision",
+      "title": "Issue #4: WebSocket handler and route DSL proposal (@chrismccord, Jan 25, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:49:05.672681-05:00",
+      "updated_at": "2025-12-16T01:49:05.672681-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | Issue: #4 | 'Add websocket handler and websocket route DSL' - One of the earliest feature proposals, showing realtime as a first-class concern from day one. Closed May 2014 after implementation.\"}"
+    },
+    {
+      "id": 283,
+      "change_id": "dfd95858-1f53-4b8b-8544-b4a1011ec7ca",
+      "node_type": "decision",
+      "title": "Issue #9: Mix task for project bootstrap/generation (@chrismccord, Jan 27, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:49:16.639773-05:00",
+      "updated_at": "2025-12-16T01:49:16.639773-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | Issue: #9 | Early proposal for what became mix phoenix.new - establishing the project generator pattern from the very beginning.\"}"
+    },
+    {
+      "id": 284,
+      "change_id": "86c21343-528b-41a4-8f34-5bee5eedbb1b",
+      "node_type": "decision",
+      "title": "Issue #10: Routing DSL changes (@darkofabijan, Jan 27, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:49:18.105737-05:00",
+      "updated_at": "2025-12-16T01:49:18.105737-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | Issue: #10 | Darko Fabijan's early routing DSL changes proposal - part of the ongoing collaboration that shaped Phoenix's elegant router DSL.\"}"
+    },
+    {
+      "id": 285,
+      "change_id": "f8e616cc-179a-4e22-bec8-47f9b4d9fe00",
+      "node_type": "decision",
+      "title": "Issue #15: Mix task that lists all routes (@darkofabijan, Jan 29, 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:49:19.331432-05:00",
+      "updated_at": "2025-12-16T01:49:19.331432-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | Issue: #15 | Proposal for 'mix routes' command to list all routes - a developer experience feature that would become mix phx.routes.\"}"
     }
   ],
   "edges": [
@@ -5358,6 +5457,50 @@
       "weight": 1.0,
       "rationale": "v1.1.0 led to v1.2.0 release",
       "created_at": "2025-12-16T01:43:05.197432-05:00"
+    },
+    {
+      "id": 213,
+      "from_node_id": 277,
+      "to_node_id": 245,
+      "from_change_id": "161090ea-60cc-4180-9082-672224aa75d5",
+      "to_change_id": "c563d01c-93e6-4396-bcb5-ee389528e0e8",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Webpack 5 asset pipeline replaced by esbuild",
+      "created_at": "2025-12-16T01:45:23.299226-05:00"
+    },
+    {
+      "id": 214,
+      "from_node_id": 250,
+      "to_node_id": 278,
+      "from_change_id": "52513c2a-dce5-4a2c-9016-94472048d130",
+      "to_change_id": "05b8f3dc-1aec-4df8-9de1-3249b9fbef32",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Channel Layer refactor enabled Socket handlers",
+      "created_at": "2025-12-16T01:45:24.938527-05:00"
+    },
+    {
+      "id": 215,
+      "from_node_id": 264,
+      "to_node_id": 279,
+      "from_change_id": "aa0b87c6-cde6-4d89-9c12-90c6bd12d77e",
+      "to_change_id": "6c420ed1-abd2-4b19-b059-9dde1e89d9d6",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Broadcasting foundation evolved into PubSub Adapters",
+      "created_at": "2025-12-16T01:46:16.744863-05:00"
+    },
+    {
+      "id": 216,
+      "from_node_id": 279,
+      "to_node_id": 165,
+      "from_change_id": "6c420ed1-abd2-4b19-b059-9dde1e89d9d6",
+      "to_change_id": "4f147730-6a9e-477a-af1c-eb1b57d85955",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "PubSub Adapters formalized into full adapter design",
+      "created_at": "2025-12-16T01:46:17.903593-05:00"
     }
   ],
   "config": {
