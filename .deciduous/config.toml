@@ -9,3 +9,9 @@ main_branches = ["main", "master"]
 # Automatically detect and store git branch when creating nodes
 # Set to false to disable branch tracking entirely
 auto_detect = true
+
+[github]
+# External repository for commit links
+# When set, commit hashes in nodes will link to this repo instead of the local one.
+# Format: "owner/repo"
+commit_repo = "phoenixframework/phoenix"

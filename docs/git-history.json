@@ -1,1 +1,25 @@
-[]
+[
+  {"hash":"c4ede8c5f71ab74b0c2e9de1eb37d15531d95a46","short_hash":"c4ede8c5f","author":"Chris McCord","date":"2014-01-18T11:18:11-05:00","message":"Initial commit","files_changed":0},
+  {"hash":"041a3c65405997850af23a963b3fd1d7f0597a90","short_hash":"041a3c654","author":"Chris McCord","date":"2014-04-30T13:37:39-04:00","message":"Merge branch 'guillec-mix_new'","files_changed":0},
+  {"hash":"10ac0e1b435d8868b17e661c64143691d58a4232","short_hash":"10ac0e1b4","author":"Chris McCord","date":"2014-04-30T23:32:25-04:00","message":"Bump version","files_changed":3},
+  {"hash":"37af2d71beb0c74e50e8a230bfe6a86f43f1efd7","short_hash":"37af2d71b","author":"Chris McCord","date":"2014-06-30T21:44:58-04:00","message":"Add changelog and bump version","files_changed":3},
+  {"hash":"1f4e490f33d8b240b5f29f2866e4f922eb1d2d01","short_hash":"1f4e490f3","author":"Chris McCord","date":"2014-08-30T18:39:01-04:00","message":"Tidy up changelog","files_changed":1},
+  {"hash":"6b11689952a20584d00574fc00f22315f2a2d032","short_hash":"6b1168995","author":"Chris McCord","date":"2014-10-13T19:23:25-04:00","message":"Update template dep to include latest stable phoenix","files_changed":1},
+  {"hash":"5615dea0083994fb6a14faab6d9ce7cffcb7870e","short_hash":"5615dea00","author":"Chris McCord","date":"2014-11-22T12:04:22-05:00","message":"Prep for 0.6.0 release","files_changed":3},
+  {"hash":"0e3df20fc1a205025fd220a17fbdfab953b7787a","short_hash":"0e3df20fc","author":"Chris McCord","date":"2014-12-09T20:34:17-05:00","message":"Update changelog","files_changed":1},
+  {"hash":"99b45690b391a813df595704cd79e15f6226e172","short_hash":"99b45690b","author":"Chris McCord","date":"2015-01-11T10:44:02-05:00","message":"Update CHANGELOG.md","files_changed":1},
+  {"hash":"45e83bd90343be693a4e92492b85b11aec390b92","short_hash":"45e83bd90","author":"Chris McCord","date":"2015-02-12T09:40:32-05:00","message":"Bump for 0.9.0 release","files_changed":4},
+  {"hash":"39aa3e69870ebdd90d82774c933a8b117a8daaba","short_hash":"39aa3e698","author":"Chris McCord","date":"2015-03-08T09:26:11-04:00","message":"Release 0.10.0","files_changed":3},
+  {"hash":"ae986a5ec320d6731267d1a092d7f311b37105a0","short_hash":"ae986a5ec","author":"Chris McCord","date":"2015-04-07T17:13:25-04:00","message":"Merge branch 'master' of github.com:chrismccord/phoenix","files_changed":0},
+  {"hash":"9e94594e256df472ca660034261129e5161965ca","short_hash":"9e94594e2","author":"Chris McCord","date":"2015-04-30T18:52:53-04:00","message":"Release 0.12.0","files_changed":5},
+  {"hash":"5aa833e06b04d15908179310f2e0400b48f1961d","short_hash":"5aa833e06","author":"Chris McCord","date":"2015-05-11T12:38:57-04:00","message":"Phoenix 0.13 is being released, not 0.14","files_changed":1},
+  {"hash":"2754f7f1e7bce63258db834c4ed85c573a8b28c5","short_hash":"2754f7f1e","author":"Chris McCord","date":"2015-06-29T18:48:16-04:00","message":"Release 0.14.0","files_changed":4},
+  {"hash":"7c602aa4e5ac8b3ddebda521d71cecf4b4b5a63e","short_hash":"7c602aa4e","author":"Chris McCord","date":"2015-07-27T08:29:53-04:00","message":"Release 0.15","files_changed":4},
+  {"hash":"ed44484672734c15a3eb4d2ba6e3fa92bbc175a3","short_hash":"ed4448467","author":"Chris McCord","date":"2015-08-05T18:41:57-04:00","message":"Release 0.16.0","files_changed":5},
+  {"hash":"296a6e99d9a3eb05a47b012fef2d79db678511a2","short_hash":"296a6e99d","author":"Chris McCord","date":"2015-08-19T04:24:43-04:00","message":"Release 0.17.0","files_changed":4},
+  {"hash":"9d999fb45f8b8257b0ea57cd6802400823dc9a86","short_hash":"9d999fb45","author":"Chris McCord","date":"2015-08-28T11:55:51-04:00","message":"Release 1.0.0","files_changed":4},
+  {"hash":"ff7cce3959d01f85a0a2f63cd06a3fe63f676f4a","short_hash":"ff7cce395","author":"Jason S","date":"2014-02-01T10:20:57-06:00","message":"Implementing raw websocket abstraction","files_changed":9},
+  {"hash":"1e38f1610439901c02baf4b8a0f7ad86dcac34b0","short_hash":"1e38f1610","author":"Chris McCord","date":"2014-03-29T23:51:20-04:00","message":"Add Topic","files_changed":2},
+  {"hash":"75516120365ef2d6043e7b599c94c1d60c3877d4","short_hash":"755161203","author":"Chris McCord","date":"2014-03-30T08:47:17-04:00","message":"Add broadcasting of messages to subscribers","files_changed":2},
+  {"hash":"83344fcf730e654a3b4515b3e18e539a75f68f80","short_hash":"83344fcf7","author":"Darko Fabijan","date":"2014-02-06T22:09:13+01:00","message":"Implements router scope macro.","files_changed":6}
+]
