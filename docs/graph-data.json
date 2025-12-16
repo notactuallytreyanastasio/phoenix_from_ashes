@@ -2551,6 +2551,61 @@
       "created_at": "2025-12-16T01:12:47.849036-05:00",
       "updated_at": "2025-12-16T01:12:47.849036-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #384 | Commit: 577fe7fae9451f9861b2c81727061f4ef84bde42 | +819 lines. José introduces pipeline macro - named groups of plugs that can be applied to route scopes. Chris: 'I really love this feature\\\\! Thanks @josevalim <3 <3 <3'. @jeregrine shares the design gist. Changes controllers back to 'plug' from 'before_action'. Foundational for Phoenix's middleware architecture.\"}"
+    },
+    {
+      "id": 234,
+      "change_id": "7ba34341-f8c5-4c79-bdf3-4f77a2b7fc9a",
+      "node_type": "action",
+      "title": "PR #485: New error handling with Plug.Debugger (@josevalim, Nov 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:13:55.001632-05:00",
+      "updated_at": "2025-12-16T01:13:55.001632-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #485 | Commit: 1327894143039e0b9a8071f9165623269abeae00 | +853 lines. José integrates Plug.Debugger for beautiful error pages in development. Changes code reloader to proxy terminal output on compile failures. Chris: 'Nice work José\\\\! Thank you\\\\! <3 <3 <3'. Screenshot in PR shows the iconic Phoenix error page design that's still recognizable today.\"}"
+    },
+    {
+      "id": 235,
+      "change_id": "baf06bea-ab0e-4899-a23a-07e22c62f500",
+      "node_type": "action",
+      "title": "PR #665: mix phoenix.gen.resource - scaffolding generator (@josevalim, Mar 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:14:48.833979-05:00",
+      "updated_at": "2025-12-16T01:14:48.833979-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #665 | +327 lines. José introduces the resource generator - creates model, controller, view, migration, and templates in one command. The ancestor of all phx.gen.* generators. Precursor to contexts - generated code directly in web/ folder. Foundation for Phoenix's famous productivity.\"}"
+    },
+    {
+      "id": 236,
+      "change_id": "67f649fa-3e73-4779-a588-6e4af2db33cc",
+      "node_type": "action",
+      "title": "PR #442: Rendering/layouts improvements - format encoders, content negotiation (@josevalim, Oct 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:14:50.073635-05:00",
+      "updated_at": "2025-12-16T01:14:50.073635-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #442 | Commit: 450e9c665909c02087407ec8f70d2493f5fc5caa | +931 lines. José overhauls rendering: put_view/2, format_encoders for json/2, accepts/2 for content negotiation, layout_formats config. Chris: 'Fantastic work and lots of nice ideas in this one. Thanks\\\\!' Deprecates old APIs, makes render halt automatically. Implementation of #359 RFC.\"}"
+    },
+    {
+      "id": 237,
+      "change_id": "dd39bf04-a5ad-488e-9ada-1e2cec50e355",
+      "node_type": "action",
+      "title": "PR #863: Add Phoenix.ChannelTest - first-class channel testing (@josevalim, May 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:15:53.553852-05:00",
+      "updated_at": "2025-12-16T01:15:53.553852-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #863 | Commit: 0a1026d9e6fe205b5a8f0038750c39220396328b | +959 lines. José introduces ChannelTest module for testing channels without HTTP. 'Code wise this is ready. I just need to write the docs.' First-class testing for WebSockets - subscribe_and_join, push, assert_reply, assert_broadcast. Foundation for LiveView testing patterns later.\"}"
+    },
+    {
+      "id": 238,
+      "change_id": "53db600f-bb3b-4b3b-95d5-de4e96602a04",
+      "node_type": "action",
+      "title": "PR #820: Token Auth - Phoenix.Token for signed, expiring tokens (@jeregrine, Jul 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:15:55.044466-05:00",
+      "updated_at": "2025-12-16T01:15:55.044466-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #820 | +184 lines. @jeregrine implements Phoenix.Token for signed, expiring authentication tokens. Chris: 'Looks nice\\\\!' Discussion of max_age options, @paulcsmith asks about revocation - Jason explains tokens are 'more akin to cookies' and revocation needs custom database logic. Still used today for channel auth and email confirmation links.\"}"
     }
   ],
   "edges": [
@@ -4533,6 +4588,17 @@
       "weight": 1.0,
       "rationale": "Endpoint enabled PubSub adapter design",
       "created_at": "2025-12-16T01:12:30.057254-05:00"
+    },
+    {
+      "id": 181,
+      "from_node_id": 236,
+      "to_node_id": 235,
+      "from_change_id": "67f649fa-3e73-4779-a588-6e4af2db33cc",
+      "to_change_id": "baf06bea-ab0e-4899-a23a-07e22c62f500",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Rendering improvements enabled resource generators",
+      "created_at": "2025-12-16T01:14:58.248091-05:00"
     }
   ],
   "config": {
