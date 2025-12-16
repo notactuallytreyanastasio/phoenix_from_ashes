@@ -1924,6 +1924,138 @@
       "created_at": "2025-12-16T00:24:11.484301-05:00",
       "updated_at": "2025-12-16T00:24:11.484301-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"July 2014: @josevalim's first PR to Phoenix. Elixir creator starts contributing performance optimizations. Beginning of deep collaboration with Chris McCord.\"}"
+    },
+    {
+      "id": 177,
+      "change_id": "96bf2aa4-8316-4087-8e1f-453826e4c24f",
+      "node_type": "decision",
+      "title": "Issue #70: RFC Websocket/Channels/PubSub - foundational design",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:29:56.216810-05:00",
+      "updated_at": "2025-12-16T00:29:56.216810-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":98,\"prompt\":\"@chrismccord: 'Really excited to unveil my plans for websocket/pubsub layer. Multiplexed websocket connection with phoenix.js. PubSub layer using :pg2 - we get process groups distributed on the mesh for free. Channels are namespaces for topics. Topics are simply strings.' 22 comments of community feedback.\"}"
+    },
+    {
+      "id": 178,
+      "change_id": "171463f2-84b1-420b-9956-391f5b823b29",
+      "node_type": "observation",
+      "title": "Issue #70: @HashNuke - 'vocabulary needs to be simplified'",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:30:10.965238-05:00",
+      "updated_at": "2025-12-16T00:30:10.965238-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@HashNuke: 'Read this as connect to websocket then join multiple channels you want.' @tallakt confused about lobby concept. Chris clarifies: 'Socket is already connected, client asks to join the channel for given topics. join authorizes the socket to subscribe.' Early vocabulary refinement.\"}"
+    },
+    {
+      "id": 179,
+      "change_id": "10b4d830-c6cf-489f-910f-99c3b9fe4d0c",
+      "node_type": "decision",
+      "title": "Issue #248: RFC incoming/outgoing channel events",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:30:23.494089-05:00",
+      "updated_at": "2025-12-16T00:30:23.494089-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"@chrismccord: 'Todo app needs REST endpoint for creating todos, broadcast todo:created to subscribers, but creator shouldnt receive broadcast. Only way now: client discards for creator. Proposal: rename event/3 to incoming/3, introduce outgoing/3.' 24 comments - real-world use case drives API design.\"}"
+    },
+    {
+      "id": 180,
+      "change_id": "aec925a4-1e92-4fdb-9ec5-ad83567013b2",
+      "node_type": "observation",
+      "title": "Issue #169: José's 'DSL or NoDSL' philosophy applied to mailers",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:30:46.653274-05:00",
+      "updated_at": "2025-12-16T00:30:46.653274-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"@josevalim: 'Add DSL for last. You shouldnt require users to use Hermes.Messenger - they should call Hermes.deliver/1 instead. Also we shouldnt provide async APIs, let users do that explicitly so they understand trade-offs.' Links to his Ruby talk 'DSL or NoDSL'. @chrismccord: 'Functions can just be imported instead of generated.'\"}"
+    },
+    {
+      "id": 181,
+      "change_id": "7976fcc8-d96b-4f27-8568-91db63f39b90",
+      "node_type": "action",
+      "title": "PR #983: Router forward macro (@chrismccord)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:30:54.698906-05:00",
+      "updated_at": "2025-12-16T00:30:54.698906-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Chris asks José for code review. Allows forwarding requests to other plugs/routers. Enables embedding admin panels, API versioning, and third-party plug integration.\"}"
+    },
+    {
+      "id": 182,
+      "change_id": "151f4899-8489-4d09-871e-120cf839d84a",
+      "node_type": "decision",
+      "title": "Issue #489: Host-based routing - subdomain support",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:31:24.838882-05:00",
+      "updated_at": "2025-12-16T00:31:24.838882-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@c-spencer: 'Useful to route on host as well as path for subdomains or multi-site hosting.' @chrismccord shares workaround hack. José proposes: 'host: foo. means starts with, host: foo.bar.com for full match. Should be straightforward.' Shipped in v0.6.1.\"}"
+    },
+    {
+      "id": 183,
+      "change_id": "2a9f2c74-3052-41cf-9c26-d901769bd049",
+      "node_type": "observation",
+      "title": "PR #1161: MongoDB support by @michalmuskala",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:31:26.330439-05:00",
+      "updated_at": "2025-12-16T00:31:26.330439-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"Adds binary_id as default in ecto models, MongoDB adapter in installer. Shows Phoenix commitment to being database-agnostic. @michalmuskala later becomes Ecto maintainer.\"}"
+    },
+    {
+      "id": 184,
+      "change_id": "bee118b5-b490-45d1-a456-83cbdd3fffdc",
+      "node_type": "decision",
+      "title": "PR #517: Phoenix.Endpoint - central configuration point (@josevalim)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:31:48.570482-05:00",
+      "updated_at": "2025-12-16T00:31:48.570482-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"@josevalim introduces Endpoint. Chris on IRC: 'plug :router, MyApp.Router as last plug in Endpoint allows error wrapping and multiple routers.' José: 'we can always revisit.' @lancehalvorsen: 'For umbrella projects, could coordinate across apps.' Major v0.7.0 architectural change.\"}"
+    },
+    {
+      "id": 185,
+      "change_id": "f2f073bf-df51-42b7-9aad-2ad3d3458fec",
+      "node_type": "action",
+      "title": "PR #485: New error handling with Plug.Debugger (@josevalim)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:32:02.258643-05:00",
+      "updated_at": "2025-12-16T00:32:02.258643-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"Migrates to Plug 0.8.3 with Plug.Debugger. 'Changes code reloader to proxy terminal output to screen in case of compile failure.' Beautiful error pages with code context - one of Phoenix's signature DX features.\"}"
+    },
+    {
+      "id": 186,
+      "change_id": "51673116-1b0a-48dc-bb5b-103dc1190322",
+      "node_type": "observation",
+      "title": "Issue #233: Early Heroku deployment challenges",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:32:22.522242-05:00",
+      "updated_at": "2025-12-16T00:32:22.522242-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":80,\"prompt\":\"@cheeyeo reports ranch.app not found on Heroku deploy. Early production deployment issues - community working through buildpack configuration. Shows real-world adoption challenges in 2014.\"}"
+    },
+    {
+      "id": 187,
+      "change_id": "dfa54b48-00de-4a2b-9629-bcc0c568e519",
+      "node_type": "action",
+      "title": "PR #356: before/after_action callbacks (@josevalim)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:32:44.702298-05:00",
+      "updated_at": "2025-12-16T00:32:44.702298-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"José: 'Move to latest Plug, allow controllers in Plug stacks, add before_action/2 and after_action/2 with guards.' Chris: 'This looks fantastic\\\\! The before/after_action code is particularly clean. I expected way more code\\\\!' José: 'Merging, will push new router stack tomorrow.' Chris: '❤️💜❤️'\"}"
+    },
+    {
+      "id": 188,
+      "change_id": "7e1fc050-3163-4637-85cc-eae4b23c1fa0",
+      "node_type": "action",
+      "title": "PR #329: Router refactor - José's massive first contribution",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:33:06.932945-05:00",
+      "updated_at": "2025-12-16T00:33:06.932945-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"@josevalim: 'Uses plug route parsing, optimizes named helpers, refactors around Route struct, allows async tests. Requires Elixir 1.0.' Chris: '1,201 additions and 1,600 deletions - Massive first contribution\\\\! ❤️❤️❤️' @jeregrine: 'Learning lots reviewing.' Elixir creator goes deep on Phoenix.\"}"
     }
   ],
   "edges": [
@@ -3708,6 +3840,17 @@
       "weight": 1.0,
       "rationale": "Performance discussion",
       "created_at": "2025-12-16T00:23:15.347260-05:00"
+    },
+    {
+      "id": 163,
+      "from_node_id": 177,
+      "to_node_id": 178,
+      "from_change_id": "96bf2aa4-8316-4087-8e1f-453826e4c24f",
+      "to_change_id": "171463f2-84b1-420b-9956-391f5b823b29",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Vocabulary feedback",
+      "created_at": "2025-12-16T00:30:22.465122-05:00"
     }
   ],
   "config": {
