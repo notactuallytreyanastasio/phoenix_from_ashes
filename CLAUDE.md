@@ -149,3 +149,49 @@ deciduous diff apply --dry-run .deciduous/patches/teammate.json
 ```
 
 PR workflow: Export patch → commit patch file → PR → teammates apply.
+
+## Phoenix Museum: Capturing External References
+
+**This is a historical archive of Phoenix Framework's development. When documenting history:**
+
+### CRITICAL: Always Include PR/Commit References
+
+When adding nodes about Phoenix releases or features, ALWAYS include:
+
+1. **PR URLs in the prompt (-p flag)**:
+```bash
+deciduous add action "Add Channels" -c 95 -p "PRs: github.com/phoenixframework/phoenix/pull/XX, /pull/YY - description of changes"
+```
+
+2. **Commit hashes in observations**:
+```bash
+deciduous add observation "v0.2.0 release commit: 10ac0e1b435d8868b17e661c64143691d58a4232" -c 90
+```
+
+3. **Key contributor attributions**:
+```bash
+deciduous add observation "José Valim joins (PR #144, #145)" -c 95 -p "Core Elixir creator brings performance expertise"
+```
+
+### Pattern for Release Documentation
+
+```bash
+# 1. Add the release outcome
+deciduous add outcome "vX.Y.0 - Feature Name (Date)" -c 90 -p "Key PRs: /pull/A, /pull/B. Commit: <hash>"
+
+# 2. Link to previous release
+deciduous link <prev_release_id> <new_release_id> -r "Next release"
+
+# 3. Add key feature decisions/actions
+deciduous add decision "Major architectural decision" -c 85 -p "Discussion: github.com/phoenixframework/phoenix/issues/XX"
+
+# 4. Add observations for notable PRs and contributors
+deciduous add observation "PR #123: Feature by @contributor" -c 80 -p "Full URL and description"
+```
+
+### Sources to Check for Each Release
+
+1. `git log vX.Y.0..vX.Z.0` - commits between releases
+2. `gh pr list --state merged --search "created:YYYY-MM-DD..YYYY-MM-DD"` - PRs in timeframe
+3. GitHub release notes when available
+4. CHANGELOG.md in Phoenix repo
