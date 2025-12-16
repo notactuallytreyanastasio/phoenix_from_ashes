@@ -2265,6 +2265,17 @@
       "created_at": "2025-12-16T00:41:44.947727-05:00",
       "updated_at": "2025-12-16T00:41:44.947727-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"@chrismccord: 'Use Elixir Logger and improve formatting of requests.' Moving from custom logging to Elixir's built-in Logger. Aligning Phoenix with Elixir ecosystem patterns.\"}"
+    },
+    {
+      "id": 208,
+      "change_id": "5c7eeaac-e022-47cb-b2c9-eb5c0106ca54",
+      "node_type": "observation",
+      "title": "Issue #387: Log pipeline for each request - observability",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T00:42:34.989447-05:00",
+      "updated_at": "2025-12-16T00:42:34.989447-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":80,\"prompt\":\"@chrismccord: 'Log pipeline for each request.' 13 comments discussing DX for debugging which plugs run. Foundation for Phoenix's detailed request logging.\"}"
     }
   ],
   "edges": [
