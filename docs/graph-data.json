@@ -2914,6 +2914,83 @@
       "created_at": "2025-12-16T01:35:29.980694-05:00",
       "updated_at": "2025-12-16T01:35:29.980694-05:00",
       "metadata_json": "{\"branch\":\"main\",\"commit\":\"24b2e273928953e9a3b6263ee58a4b334d818d86\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | Code reloading extracted to separate project | Enables instant feedback development | 7 files changed\"}"
+    },
+    {
+      "id": 267,
+      "change_id": "3759d269-6da2-4372-836a-dc172fed53d1",
+      "node_type": "outcome",
+      "title": "DAG UI deployed to GH Pages",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:36:12.065297-05:00",
+      "updated_at": "2025-12-16T01:36:12.065297-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"f1fff2c\",\"confidence\":95}"
+    },
+    {
+      "id": 268,
+      "change_id": "79ff1070-f5ac-41b7-9e2e-b66898a40101",
+      "node_type": "action",
+      "title": "PR #5030: WebSocket negotiation via Plug.Conn.upgrade_adapter/3 (@mtrudel, Nov 2022)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:37:18.489825-05:00",
+      "updated_at": "2025-12-16T01:37:18.489825-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"06b314e8845ba98670df5da33d0157642e2ed42e\",\"confidence\":85,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #5030 | +122/-141 lines | Plug-mediated WebSocket upgrade support | Removes HTTP aspects from Cowboy2Handler | Step toward Bandit server support (#5003)\"}"
+    },
+    {
+      "id": 269,
+      "change_id": "dcbd356a-4322-43ee-9d35-808d50cb495d",
+      "node_type": "decision",
+      "title": "Issue #399: Runtime configuration proposal (@josevalim, Oct 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:38:16.176339-05:00",
+      "updated_at": "2025-12-16T01:38:16.176339-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | Issue: #399 | José proposes ETS-backed config: 1) Process per router with ETS table 2) Merge config with defaults 3) Protected ETS for concurrent reads 4) API: MyApp.Router.config(:key) | Foundation for Phoenix.Endpoint config\"}"
+    },
+    {
+      "id": 270,
+      "change_id": "35032c3a-9cb7-45a6-b366-9546a1344d53",
+      "node_type": "observation",
+      "title": "Issue #194: Early hook/notification proposal (@slogsdon, Jul 2014)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:38:17.283891-05:00",
+      "updated_at": "2025-12-16T01:38:17.283891-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":80,\"prompt\":\"REPO: phoenixframework/phoenix | Issue: #194 | Early proposal for GenEvent-based hooks | Inspiration from ChicagoBoss BossNews | Use case: CRUD notifications to WebSocket handlers | Foreshadows PubSub/Channel architecture\"}"
+    },
+    {
+      "id": 271,
+      "change_id": "688d0ab5-92a1-41c2-bcbe-420a87adaa03",
+      "node_type": "action",
+      "title": "PR #2621: Cowboy 2 support (@Gazler, Dec 2017)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:39:39.312138-05:00",
+      "updated_at": "2025-12-16T01:39:39.312138-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"a0c41bcbbc7712929df2eea63bfafc17bc3bfd2e\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #2621 | +323 lines | Gary Rennie adds Cowboy 2 support | Major HTTP server upgrade | Review requested: 'I'd recommend reviewing commits individually so you can see diff between cowboy and cowboy 2'\"}"
+    },
+    {
+      "id": 272,
+      "change_id": "d0e2201f-7be3-42a8-8ffd-d672effbf277",
+      "node_type": "decision",
+      "title": "PR #5706: Bandit becomes default web server (@mtrudel, Feb 2024)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:39:40.908614-05:00",
+      "updated_at": "2025-12-16T01:39:40.908614-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"a4a761cf3fa3e51fc13464cc35ee0193b7bb1de5\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #5706 | +48 lines | SIGNIFICANT: Pure Elixir HTTP server replaces Cowboy as default | Both remain first-class supported | Backwards compatible - keeps Cowboy default if not specified\"}"
+    },
+    {
+      "id": 273,
+      "change_id": "fb2149ce-2e42-49ca-baa2-da70571aac8e",
+      "node_type": "action",
+      "title": "PR #4215: Revamp context guide (@chrismccord, Jun 2021)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:40:49.729707-05:00",
+      "updated_at": "2025-12-16T01:40:49.729707-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"e4c87a5a290b2e4c9c7ccae35ed4c444397ff992\",\"confidence\":85,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #4215 | +887/-635 lines | Major documentation update for Contexts | Refines Phoenix 1.3+ architectural guidance\"}"
     }
   ],
   "edges": [
@@ -5116,6 +5193,105 @@
       "weight": 1.0,
       "rationale": "Topic enabled broadcasting",
       "created_at": "2025-12-16T01:35:21.555149-05:00"
+    },
+    {
+      "id": 201,
+      "from_node_id": 256,
+      "to_node_id": 257,
+      "from_change_id": "b046ec4e-30e3-4976-8101-116128b504bc",
+      "to_change_id": "3f1f7bac-e2c0-4349-8ac9-bca74da613aa",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Goal achieved",
+      "created_at": "2025-12-16T01:36:13.051046-05:00"
+    },
+    {
+      "id": 202,
+      "from_node_id": 256,
+      "to_node_id": 267,
+      "from_change_id": "b046ec4e-30e3-4976-8101-116128b504bc",
+      "to_change_id": "3759d269-6da2-4372-836a-dc172fed53d1",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Goal achieved - DAG UI deployed",
+      "created_at": "2025-12-16T01:36:21.027764-05:00"
+    },
+    {
+      "id": 203,
+      "from_node_id": 232,
+      "to_node_id": 268,
+      "from_change_id": "b2ab1dfc-b909-4568-a91b-7c9c516be923",
+      "to_change_id": "79ff1070-f5ac-41b7-9e2e-b66898a40101",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Transport adapter evolved to Plug-based WebSocket upgrade",
+      "created_at": "2025-12-16T01:37:28.198549-05:00"
+    },
+    {
+      "id": 204,
+      "from_node_id": 269,
+      "to_node_id": 231,
+      "from_change_id": "dcbd356a-4322-43ee-9d35-808d50cb495d",
+      "to_change_id": "e592ad55-b0f1-4e18-bda5-15c9104d8b8f",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Runtime config design evolved into Phoenix.Endpoint",
+      "created_at": "2025-12-16T01:38:23.130109-05:00"
+    },
+    {
+      "id": 205,
+      "from_node_id": 270,
+      "to_node_id": 264,
+      "from_change_id": "35032c3a-9cb7-45a6-b366-9546a1344d53",
+      "to_change_id": "aa0b87c6-cde6-4d89-9c12-90c6bd12d77e",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Hook proposal anticipated broadcasting architecture",
+      "created_at": "2025-12-16T01:38:24.058412-05:00"
+    },
+    {
+      "id": 206,
+      "from_node_id": 271,
+      "to_node_id": 268,
+      "from_change_id": "688d0ab5-92a1-41c2-bcbe-420a87adaa03",
+      "to_change_id": "79ff1070-f5ac-41b7-9e2e-b66898a40101",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Cowboy 2 architecture enabled Plug-based WebSocket negotiation",
+      "created_at": "2025-12-16T01:39:48.625911-05:00"
+    },
+    {
+      "id": 207,
+      "from_node_id": 268,
+      "to_node_id": 272,
+      "from_change_id": "79ff1070-f5ac-41b7-9e2e-b66898a40101",
+      "to_change_id": "d0e2201f-7be3-42a8-8ffd-d672effbf277",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Plug WebSocket negotiation enabled Bandit server support",
+      "created_at": "2025-12-16T01:39:49.514378-05:00"
+    },
+    {
+      "id": 208,
+      "from_node_id": 254,
+      "to_node_id": 239,
+      "from_change_id": "d79ff5ae-0ff7-4f8e-a788-a5634d8cefd5",
+      "to_change_id": "3713a969-f1fd-40fb-9266-51132d5727ff",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Project generator evolved to include Brunch",
+      "created_at": "2025-12-16T01:40:22.186807-05:00"
+    },
+    {
+      "id": 209,
+      "from_node_id": 260,
+      "to_node_id": 273,
+      "from_change_id": "7bb56f49-809b-4e89-ad26-b7ca51827744",
+      "to_change_id": "fb2149ce-2e42-49ca-baa2-da70571aac8e",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "1.3 generators documentation matured",
+      "created_at": "2025-12-16T01:40:51.131136-05:00"
     }
   ],
   "config": {
