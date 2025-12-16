@@ -2474,6 +2474,17 @@
       "created_at": "2025-12-16T01:00:11.583485-05:00",
       "updated_at": "2025-12-16T01:00:11.583485-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix_live_view | PR: #2423 | Commit: 1abc20ca63331df984471c9b8a4fbf4a6cae0469 | +1,295 lines. Chris introduces streams - a new primitive for efficiently rendering large, dynamic collections without keeping items in socket assigns. DOM elements are tracked client-side, avoiding memory bloat on server. Chris's celebration after José's approval: hearts + phoenix emojis. A major step for real-world LiveView scalability.\"}"
+    },
+    {
+      "id": 227,
+      "change_id": "dbce716f-20ca-4411-bc9c-50ea55fecebd",
+      "node_type": "action",
+      "title": "PR #2763: Add assign_async and start_async (@chrismccord, Aug 2023)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:01:45.527399-05:00",
+      "updated_at": "2025-12-16T01:01:45.527399-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix_live_view | PR: #2763 | Commit: 56697d304e7a2bba960e71c3ee3c4101af4fb769 | +1,428 lines. Chris adds async assigns - elegant primitives for loading async data in LiveViews without blocking render. @jeregrine: 'really great work buddy...overall looking fire.' @aj-foster: 'Love to see support for this in LiveView.' Simplifies handling of slow database queries, API calls, etc. with built-in loading/error states.\"}"
     }
   ],
   "edges": [
@@ -4390,6 +4401,17 @@
       "weight": 1.0,
       "rationale": "LiveView evolved to handle large collections with streams",
       "created_at": "2025-12-16T01:00:19.572797-05:00"
+    },
+    {
+      "id": 175,
+      "from_node_id": 226,
+      "to_node_id": 227,
+      "from_change_id": "101287dc-07a6-4a72-a982-df5bbbd53579",
+      "to_change_id": "dbce716f-20ca-4411-bc9c-50ea55fecebd",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Streams followed by async assigns for LiveView DX",
+      "created_at": "2025-12-16T01:01:53.225612-05:00"
     }
   ],
   "config": {
