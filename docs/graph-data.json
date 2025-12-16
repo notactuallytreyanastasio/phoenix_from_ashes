@@ -2606,6 +2606,39 @@
       "created_at": "2025-12-16T01:15:55.044466-05:00",
       "updated_at": "2025-12-16T01:15:55.044466-05:00",
       "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #820 | +184 lines. @jeregrine implements Phoenix.Token for signed, expiring authentication tokens. Chris: 'Looks nice\\\\!' Discussion of max_age options, @paulcsmith asks about revocation - Jason explains tokens are 'more akin to cookies' and revocation needs custom database logic. Still used today for channel auth and email confirmation links.\"}"
+    },
+    {
+      "id": 239,
+      "change_id": "3713a969-f1fd-40fb-9266-51132d5727ff",
+      "node_type": "action",
+      "title": "PR #655: Brunch integration with phoenix.new options (@chrismccord, Mar 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:17:20.419752-05:00",
+      "updated_at": "2025-12-16T01:17:20.419752-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":85,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #655 | +689 lines. Chris integrates Brunch.js as default asset pipeline. José suggests cleaner file mapping approach: 'create two maps of how you want them to be copied.' Chris: 'I made the discussed changes and it's waaaay nicer.' Adds --skip-brunch and --skip-npm options. Brunch was default until webpack/esbuild later replaced it.\"}"
+    },
+    {
+      "id": 240,
+      "change_id": "02873ec4-ff50-4536-a0c1-5db850744e46",
+      "node_type": "decision",
+      "title": "PR #704: Channel processes with handle_info - per-channel isolation (@chrismccord, Mar 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:17:22.505630-05:00",
+      "updated_at": "2025-12-16T01:17:22.505630-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #704 | Commit: 2772b7d80c20031151ad1a0a1f782a5a6d020ea6 | +1,313 lines. Chris enables per-channel GenServer processes. José: 'Don't trap exits...terminate is not guaranteed to be invoked.' Discussion of leave vs terminate semantics. Key feature: 'one channel can now crash without killing the entire transport connection.' Clients get onError/onClose callbacks. Foundation for LiveView's process model.\"}"
+    },
+    {
+      "id": 241,
+      "change_id": "dbc22d4f-30f1-403e-929b-4ec8d5cbb1ed",
+      "node_type": "action",
+      "title": "PR #737: Sync channel messaging with new push API (@chrismccord, Apr 2015)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-16T01:17:48.658775-05:00",
+      "updated_at": "2025-12-16T01:17:48.658775-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"REPO: phoenixframework/phoenix | PR: #737 | +803 lines. Chris overhauls channel messaging with push/broadcast/reply. José: 'Beautiful. I love the join example\\\\!' @paulcsmith asks about {:noreply, socket} patterns. Discussion of broadcast\\\\! vs broadcast - Chris: 'If the pubsub server is down, you likely want to crash.' ES6 usage noted. Foundation of today's channel API.\"}"
     }
   ],
   "edges": [
@@ -4599,6 +4632,28 @@
       "weight": 1.0,
       "rationale": "Rendering improvements enabled resource generators",
       "created_at": "2025-12-16T01:14:58.248091-05:00"
+    },
+    {
+      "id": 182,
+      "from_node_id": 232,
+      "to_node_id": 240,
+      "from_change_id": "b2ab1dfc-b909-4568-a91b-7c9c516be923",
+      "to_change_id": "02873ec4-ff50-4536-a0c1-5db850744e46",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Transport adapter enabled per-channel processes",
+      "created_at": "2025-12-16T01:17:30.744506-05:00"
+    },
+    {
+      "id": 183,
+      "from_node_id": 240,
+      "to_node_id": 241,
+      "from_change_id": "02873ec4-ff50-4536-a0c1-5db850744e46",
+      "to_change_id": "dbc22d4f-30f1-403e-929b-4ec8d5cbb1ed",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Channel processes enabled new push API",
+      "created_at": "2025-12-16T01:17:57.635482-05:00"
     }
   ],
   "config": {
