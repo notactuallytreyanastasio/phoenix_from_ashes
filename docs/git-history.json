@@ -21,5 +21,18 @@
   {"hash":"ff7cce3959d01f85a0a2f63cd06a3fe63f676f4a","short_hash":"ff7cce395","author":"Jason S","date":"2014-02-01T10:20:57-06:00","message":"Implementing raw websocket abstraction","files_changed":9},
   {"hash":"1e38f1610439901c02baf4b8a0f7ad86dcac34b0","short_hash":"1e38f1610","author":"Chris McCord","date":"2014-03-29T23:51:20-04:00","message":"Add Topic","files_changed":2},
   {"hash":"75516120365ef2d6043e7b599c94c1d60c3877d4","short_hash":"755161203","author":"Chris McCord","date":"2014-03-30T08:47:17-04:00","message":"Add broadcasting of messages to subscribers","files_changed":2},
-  {"hash":"83344fcf730e654a3b4515b3e18e539a75f68f80","short_hash":"83344fcf7","author":"Darko Fabijan","date":"2014-02-06T22:09:13+01:00","message":"Implements router scope macro.","files_changed":6}
+  {"hash":"83344fcf730e654a3b4515b3e18e539a75f68f80","short_hash":"83344fcf7","author":"Darko Fabijan","date":"2014-02-06T22:09:13+01:00","message":"Implements router scope macro.","files_changed":6},
+  {"hash":"0907ec40d0a48560708f4c60a6d24905b286f855","short_hash":"0907ec40d","author":"Jose Valim","date":"2015-03-07T17:43:17+01:00","message":"Merge pull request #665 from phoenixframework/jv-phoenix.gen.resource","files_changed":14},
+  {"hash":"4072219403922ac4fadd296971616b0607a8530f","short_hash":"407221940","author":"Howard Huang","date":"2015-02-20T13:31:14-08:00","message":"Implementation of scrub_params/2 plug","files_changed":2},
+  {"hash":"15077b0031c47d811bd17b56cc989aa8c87f28ff","short_hash":"15077b003","author":"Sonny Scroggin","date":"2014-08-25T11:55:20-05:00","message":"Tag Helper","files_changed":2},
+  {"hash":"24b2e273928953e9a3b6263ee58a4b334d818d86","short_hash":"24b2e2739","author":"Chris McCord","date":"2015-03-24T00:04:34-04:00","message":"Extract live reloading to phoenix_live_reload proejct","files_changed":7},
+  {"hash":"cf3270447f1a2f7705b90836e06c23fa6c14e924","short_hash":"cf3270447","author":"Jose Valim","date":"2015-04-11T08:42:44+02:00","message":"Merge pull request #758 from laurocaetano/introduce-digest-task","files_changed":5},
+  {"hash":"50163bc7af3ebccdc3373818913b7155334cee8c","short_hash":"50163bc7a","author":"Jose Valim","date":"2015-04-16T14:20:52+02:00","message":"Initial work with json generator","files_changed":8},
+  {"hash":"e8d7a7541c58219650055fb3e97845f0b76bd10f","short_hash":"e8d7a7541","author":"Jose Valim","date":"2015-04-15T14:36:06+02:00","message":"Add response/2 and friends","files_changed":3},
+  {"hash":"f81a3bce264a5bbcd805eecc676c223a97627b63","short_hash":"f81a3bce2","author":"Jose Valim","date":"2015-06-29T14:41:28+02:00","message":"Use new Ecto v0.13.0 SQL sandbox","files_changed":3},
+  {"hash":"3068ec1b8ddd3bca9bcb754a443c3d0caec60220","short_hash":"3068ec1b8","author":"Chris McCord","date":"2015-07-25T12:03:22-04:00","message":"Merge branch 'cm-channel-serialization'","files_changed":12},
+  {"hash":"fbf38ee80ad8a21cd0240cbb0ca422a08f1e86fd","short_hash":"fbf38ee80","author":"Chris McCord","date":"2015-08-18T22:05:57-04:00","message":"Version transport contract. Closes #1004","files_changed":4},
+  {"hash":"8f3ccd39e1eb18f9956306ebe6ed67dc3b50b63c","short_hash":"8f3ccd39e","author":"Chris McCord","date":"2015-06-26T20:24:17-04:00","message":"Move forward macro to Route","files_changed":2},
+  {"hash":"89f53ea2d08b751499deadfc2a2fe02f75e2930a","short_hash":"89f53ea2d","author":"Chris McCord","date":"2015-07-24T08:35:31-04:00","message":"Add intercept and decouple channel from fastlane broadcast","files_changed":9},
+  {"hash":"96a414411063cbffef0297f2e22c8c6cabe90132","short_hash":"96a414411","author":"Jose Valim","date":"2015-08-04T19:10:30+02:00","message":"Add ability to leverage session affinity in long poller","files_changed":4}
 ]
