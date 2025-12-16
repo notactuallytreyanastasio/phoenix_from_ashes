@@ -375,17 +375,6 @@
       "metadata_json": "{\"branch\":\"main\",\"confidence\":95,\"prompt\":\"REPO: phoenixframework/phoenix | COMMIT: 296a6e99d9a3eb05a47b012fef2d79db678511a2 | CHANGELOG: Last breaking changes before 1.0, API freeze imminent\",\"commit\":\"296a6e99d9a3eb05a47b012fef2d79db678511a2\"}"
     },
     {
-      "id": 35,
-      "change_id": "3596920d-1449-4d4d-8aa1-093f13ca8a6d",
-      "node_type": "outcome",
-      "title": "TEST v1.0 - Production Ready",
-      "description": null,
-      "status": "pending",
-      "created_at": "2025-12-15T21:48:17.974490-05:00",
-      "updated_at": "2025-12-15T21:48:17.974490-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"24c0a0eff23a3fa991bcfc0c2c8e3cd89e498830\",\"confidence\":99,\"prompt\":\"REPO: phoenixframework/phoenix | PRs: #1000+ | CHANGELOG: First production release!\"}"
-    },
-    {
       "id": 36,
       "change_id": "34fd6d68-6739-4777-8a09-0bb94bef37e2",
       "node_type": "observation",
@@ -427,7 +416,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:55:00.183697-05:00",
       "updated_at": "2025-12-15T21:55:00.183697-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"6e4617199\",\"confidence\":90,\"prompt\":\"Second commit: Router now calls controllers. Pattern: match route -> invoke controller.action. Foundation for MVC pattern in Phoenix.\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"6e4617199eaa6150686e13500432906cd2e4beb9\",\"confidence\":90,\"prompt\":\"Second commit: Router now calls controllers. Pattern: match route -> invoke controller.action. Foundation for MVC pattern in Phoenix.\"}"
     },
     {
       "id": 40,
@@ -438,7 +427,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:55:10.474762-05:00",
       "updated_at": "2025-12-15T21:55:10.474762-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"d91efaf51\",\"confidence\":85,\"prompt\":\"Third commit: Test-driven development from day one. 404 error page handling. Shows Chris's focus on production-ready behavior early.\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"d91efaf51fbfdebda02af00c189e642dcfbd5cf5\",\"confidence\":85,\"prompt\":\"Third commit: Test-driven development from day one. 404 error page handling. Shows Chris's focus on production-ready behavior early.\"}"
     },
     {
       "id": 41,
@@ -449,7 +438,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:55:12.132881-05:00",
       "updated_at": "2025-12-15T21:55:12.132881-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"7c2118b16\",\"confidence\":85,\"prompt\":\"Issue #1: Should each request spawn a GenServer process? Chris initially implements GenServer-based dispatch with 500 error pages. Leverages Erlang's let it crash philosophy.\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"7c2118b16cea8a64eda96d64e4f83d738a912a85\",\"confidence\":85,\"prompt\":\"Issue #1: Should each request spawn a GenServer process? Chris initially implements GenServer-based dispatch with 500 error pages. Leverages Erlang's let it crash philosophy.\"}"
     },
     {
       "id": 42,
@@ -460,7 +449,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:55:22.058650-05:00",
       "updated_at": "2025-12-15T21:55:22.058650-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"2bbb85f2f\",\"confidence\":80,\"prompt\":\"Commit 2bbb85f2f: Dispatcher Client/Server. Kill dispatch process after complete. Closes Issue #1. Each request gets its own process - Erlang's concurrency model.\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"2bbb85f2f8a70be9cda08d51fa3347659af1fe15\",\"confidence\":80,\"prompt\":\"Commit 2bbb85f2f: Dispatcher Client/Server. Kill dispatch process after complete. Closes Issue #1. Each request gets its own process - Erlang's concurrency model.\"}"
     },
     {
       "id": 43,
@@ -471,7 +460,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:55:31.866430-05:00",
       "updated_at": "2025-12-15T21:55:31.866430-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"8a3bddfb8\",\"confidence\":85,\"prompt\":\"Commit 8a3bddfb8: Refactor router dispatching to use try/catch in favor of direct message passing. Performance and simplicity won over process isolation for simple request handling.\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"8a3bddfb8ae4b9904fba3f33b939b9dd3b237977\",\"confidence\":85,\"prompt\":\"Commit 8a3bddfb8: Refactor router dispatching to use try/catch in favor of direct message passing. Performance and simplicity won over process isolation for simple request handling.\"}"
     },
     {
       "id": 44,
@@ -482,7 +471,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:55:46.612434-05:00",
       "updated_at": "2025-12-15T21:55:46.612434-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"9f54676c5\",\"confidence\":85,\"prompt\":\"Commit 9f54676c5: Support for splat params like /files/*path. Closes Issue #2. Enables catch-all routes for file serving, nested paths.\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"9f54676c54cacc407f1a165a6226b29e8ff0fa04\",\"confidence\":85,\"prompt\":\"Commit 9f54676c5: Support for splat params like /files/*path. Closes Issue #2. Enables catch-all routes for file serving, nested paths.\"}"
     },
     {
       "id": 45,
@@ -493,7 +482,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:55:47.462012-05:00",
       "updated_at": "2025-12-15T21:55:47.462012-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"ae3fff6fb\",\"confidence\":90,\"prompt\":\"Commits 03215ab09, ae3fff6fb: Controller.redirect function. Generated _path and _url helpers with keyword param replacement. Rails-like developer experience taking shape.\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"ae3fff6fbbb62e070d3583b7b1acca862df35542\",\"confidence\":90,\"prompt\":\"Commits 03215ab09, ae3fff6fb: Controller.redirect function. Generated _path and _url helpers with keyword param replacement. Rails-like developer experience taking shape.\"}"
     },
     {
       "id": 46,
@@ -504,7 +493,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:56:01.213306-05:00",
       "updated_at": "2025-12-15T21:56:01.213306-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"75fed66d6\",\"confidence\":90,\"prompt\":\"Jan 27, 2014: PR #8 from darkofabijan adds 'new' resource route. First external contributor\\\\! Community begins forming around Phoenix. github.com/phoenixframework/phoenix/pull/8\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"75fed66d6dad1198d6a34b2704153361c568aade\",\"confidence\":90,\"prompt\":\"Jan 27, 2014: PR #8 from darkofabijan adds 'new' resource route. First external contributor\\\\! Community begins forming around Phoenix. github.com/phoenixframework/phoenix/pull/8\"}"
     },
     {
       "id": 47,
@@ -515,7 +504,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:56:11.173052-05:00",
       "updated_at": "2025-12-15T21:56:11.173052-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"b037343da\",\"confidence\":85,\"prompt\":\"Jan 28, 2014: Second community PR. nurugger07 removes unnecessary Naming module. Community helping refine codebase. github.com/phoenixframework/phoenix/pull/12\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"b037343da23b07ff1382de203edb943f41a4a9af\",\"confidence\":85,\"prompt\":\"Jan 28, 2014: Second community PR. nurugger07 removes unnecessary Naming module. Community helping refine codebase. github.com/phoenixframework/phoenix/pull/12\"}"
     },
     {
       "id": 48,
@@ -526,7 +515,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:56:21.157928-05:00",
       "updated_at": "2025-12-15T21:56:21.157928-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"39f784fb6\",\"confidence\":95,\"prompt\":\"Jan 29, 2014: darkofabijan creates project generator. 'mix phoenix.new myapp' bootstraps new projects. Critical for adoption - lowers barrier to entry. github.com/phoenixframework/phoenix/pull/14\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"39f784fb66009cdb9b947f25c9840f351c8d51e2\",\"confidence\":95,\"prompt\":\"Jan 29, 2014: darkofabijan creates project generator. 'mix phoenix.new myapp' bootstraps new projects. Critical for adoption - lowers barrier to entry. github.com/phoenixframework/phoenix/pull/14\"}"
     },
     {
       "id": 49,
@@ -537,7 +526,7 @@
       "status": "pending",
       "created_at": "2025-12-15T21:56:29.780797-05:00",
       "updated_at": "2025-12-15T21:56:29.780797-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"5a6fffd50\",\"confidence\":90,\"prompt\":\"Jan 31, 2014: Chris adds nested resources. Routes like resources :users do; resources :comments; end. REST maturity. Rails-like nested resource patterns. github.com/phoenixframework/phoenix/pull/16\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"5a6fffd50530f3c6493f2d56d7254980d8d3f2d4\",\"confidence\":90,\"prompt\":\"Jan 31, 2014: Chris adds nested resources. Routes like resources :users do; resources :comments; end. REST maturity. Rails-like nested resource patterns. github.com/phoenixframework/phoenix/pull/16\"}"
     },
     {
       "id": 50,
@@ -548,7 +537,95 @@
       "status": "pending",
       "created_at": "2025-12-15T21:56:39.431337-05:00",
       "updated_at": "2025-12-15T21:56:39.431337-05:00",
-      "metadata_json": "{\"branch\":\"main\",\"commit\":\"cb1b93aa0\",\"confidence\":85,\"prompt\":\"Feb 2, 2014: darkofabijan adds routes task. 'mix phoenix.routes' shows all defined routes. Debugging and documentation tool. Rails rake routes equivalent. github.com/phoenixframework/phoenix/pull/18\"}"
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"cb1b93aa0d9a98fb8dbea4a992214c949be109c2\",\"confidence\":85,\"prompt\":\"Feb 2, 2014: darkofabijan adds routes task. 'mix phoenix.routes' shows all defined routes. Debugging and documentation tool. Rails rake routes equivalent. github.com/phoenixframework/phoenix/pull/18\"}"
+    },
+    {
+      "id": 51,
+      "change_id": "64a608e4-d6ac-4072-b707-78b45fca325b",
+      "node_type": "action",
+      "title": "PR #22: Fix root path routing (darkofabijan)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:57:14.776985-05:00",
+      "updated_at": "2025-12-15T21:57:14.776985-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"2809ad71bc700b707c2ee2f6c9ff18b3f13468c1\",\"confidence\":85,\"prompt\":\"Feb 2, 2014: Allow routes with leading slash like get '/'. Root path fix. Consistent URL handling. github.com/phoenixframework/phoenix/pull/22\"}"
+    },
+    {
+      "id": 52,
+      "change_id": "9e6b2d29-65a2-4370-86bb-767594322152",
+      "node_type": "action",
+      "title": "PR #24: Resource :only/:except limiting (nurugger07)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:57:15.767394-05:00",
+      "updated_at": "2025-12-15T21:57:15.767394-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"d3da9f2a31aab76331671d048ef96fb7b72126a3\",\"confidence\":85,\"prompt\":\"Feb 3, 2014: Fine-grained resource routes. resources :users, only: [:index, :show]. Avoid generating unused routes. Rails-like flexibility. github.com/phoenixframework/phoenix/pull/24\"}"
+    },
+    {
+      "id": 53,
+      "change_id": "51774445-1383-4ade-a2ba-1d08e025567c",
+      "node_type": "action",
+      "title": "PR #32: Improve new app experience (cromwellryan)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:57:27.918714-05:00",
+      "updated_at": "2025-12-15T21:57:27.918714-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"c9a0c1de155c9c90e2140581c8c6ae6d139809a3\",\"confidence\":85,\"prompt\":\"Feb 5, 2014: Better onboarding. Install, compile tips in generated project. Third unique contributor! Community growing. github.com/phoenixframework/phoenix/pull/32\"}"
+    },
+    {
+      "id": 54,
+      "change_id": "71f21dcb-77d2-40a2-9da5-379f2fd67e04",
+      "node_type": "decision",
+      "title": "Route organization: Scope macro for namespacing",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:57:37.707588-05:00",
+      "updated_at": "2025-12-15T21:57:37.707588-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"83344fcf730e654a3b4515b3e18e539a75f68f80\",\"confidence\":90,\"prompt\":\"Feb 2014: Chris implements scope macro. Namespace routes under paths like scope '/admin' do. Organizes large apps. Admin panels, API versioning patterns emerge.\"}"
+    },
+    {
+      "id": 55,
+      "change_id": "6ab1ebd0-5c1b-461a-829e-63c4118ec626",
+      "node_type": "action",
+      "title": "Begin WebSocket abstraction implementation",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:59:53.696589-05:00",
+      "updated_at": "2025-12-15T21:59:53.696589-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"ff7cce3959d01f85a0a2f63cd06a3fe63f676f4a\",\"confidence\":90,\"prompt\":\"April 2014: Chris starts building real-time layer. Raw WebSocket handling via Cowboy. Foundation for Phoenix's killer feature. Issue #4 work begins.\"}"
+    },
+    {
+      "id": 56,
+      "change_id": "cad178e7-a576-4276-921c-ef050e7b2348",
+      "node_type": "decision",
+      "title": "Channel abstraction design: Topics, Events, Messages",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T22:00:05.951523-05:00",
+      "updated_at": "2025-12-15T22:00:05.951523-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"1e38f1610439901c02baf4b8a0f7ad86dcac34b0\",\"confidence\":95,\"prompt\":\"Key architectural decision: Introduce Topic as pub/sub layer. Channels multiplex over Topics. Events are named messages. This abstraction becomes Phoenix's signature pattern.\"}"
+    },
+    {
+      "id": 57,
+      "change_id": "15080a71-3be5-417a-9354-de57ccbb7756",
+      "node_type": "action",
+      "title": "Implement broadcast/subscribe pattern for Topics",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T22:00:17.634863-05:00",
+      "updated_at": "2025-12-15T22:00:17.634863-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"75516120365ef2d6043e7b599c94c1d60c3877d4\",\"confidence\":90,\"prompt\":\"April 2014: Broadcasting messages to all Topic subscribers. PubSub pattern. Erlang's process messaging makes this elegant and performant.\"}"
+    },
+    {
+      "id": 58,
+      "change_id": "7b451677-3caa-46f0-96b9-08a0db042594",
+      "node_type": "action",
+      "title": "Pausing museum work to patch deciduous for external repo support",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T22:07:20.858957-05:00",
+      "updated_at": "2025-12-15T22:07:20.858957-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"confidence\":90,\"prompt\":\"User asked: patch deciduous to support external repo references for commit links\"}"
     }
   ],
   "edges": [
@@ -1079,6 +1156,105 @@
       "weight": 1.0,
       "rationale": "Developer tooling",
       "created_at": "2025-12-15T21:56:48.299501-05:00"
+    },
+    {
+      "id": 49,
+      "from_node_id": 50,
+      "to_node_id": 51,
+      "from_change_id": "ca6e276b-4980-49b8-af09-01a5aa7cc58d",
+      "to_change_id": "64a608e4-d6ac-4072-b707-78b45fca325b",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Routing refinement",
+      "created_at": "2025-12-15T21:57:25.882949-05:00"
+    },
+    {
+      "id": 50,
+      "from_node_id": 51,
+      "to_node_id": 52,
+      "from_change_id": "64a608e4-d6ac-4072-b707-78b45fca325b",
+      "to_change_id": "9e6b2d29-65a2-4370-86bb-767594322152",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "API flexibility",
+      "created_at": "2025-12-15T21:57:25.892834-05:00"
+    },
+    {
+      "id": 51,
+      "from_node_id": 52,
+      "to_node_id": 53,
+      "from_change_id": "9e6b2d29-65a2-4370-86bb-767594322152",
+      "to_change_id": "51774445-1383-4ade-a2ba-1d08e025567c",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Developer experience",
+      "created_at": "2025-12-15T21:57:37.684600-05:00"
+    },
+    {
+      "id": 52,
+      "from_node_id": 53,
+      "to_node_id": 54,
+      "from_change_id": "51774445-1383-4ade-a2ba-1d08e025567c",
+      "to_change_id": "71f21dcb-77d2-40a2-9da5-379f2fd67e04",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Architecture for scale",
+      "created_at": "2025-12-15T21:57:46.219053-05:00"
+    },
+    {
+      "id": 53,
+      "from_node_id": 54,
+      "to_node_id": 12,
+      "from_change_id": "71f21dcb-77d2-40a2-9da5-379f2fd67e04",
+      "to_change_id": "cf4e04a2-3f17-42ef-ae7f-f4ef772fefe0",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Leads to first public release",
+      "created_at": "2025-12-15T21:59:13.832736-05:00"
+    },
+    {
+      "id": 54,
+      "from_node_id": 12,
+      "to_node_id": 55,
+      "from_change_id": "cf4e04a2-3f17-42ef-ae7f-f4ef772fefe0",
+      "to_change_id": "6ab1ebd0-5c1b-461a-829e-63c4118ec626",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Real-time vision emerges after v0.1.1",
+      "created_at": "2025-12-15T21:59:55.023716-05:00"
+    },
+    {
+      "id": 55,
+      "from_node_id": 55,
+      "to_node_id": 56,
+      "from_change_id": "6ab1ebd0-5c1b-461a-829e-63c4118ec626",
+      "to_change_id": "cad178e7-a576-4276-921c-ef050e7b2348",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Architecture takes shape",
+      "created_at": "2025-12-15T22:00:07.949271-05:00"
+    },
+    {
+      "id": 56,
+      "from_node_id": 56,
+      "to_node_id": 57,
+      "from_change_id": "cad178e7-a576-4276-921c-ef050e7b2348",
+      "to_change_id": "15080a71-3be5-417a-9354-de57ccbb7756",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Core PubSub implementation",
+      "created_at": "2025-12-15T22:00:18.662933-05:00"
+    },
+    {
+      "id": 57,
+      "from_node_id": 5,
+      "to_node_id": 58,
+      "from_change_id": "30035c15-2cc9-478c-9885-9664e9728788",
+      "to_change_id": "7b451677-3caa-46f0-96b9-08a0db042594",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Blockerfor museum - need external repo support",
+      "created_at": "2025-12-15T22:07:27.156369-05:00"
     }
   ]
 }
