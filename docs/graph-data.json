@@ -384,6 +384,171 @@
       "created_at": "2025-12-15T21:48:17.974490-05:00",
       "updated_at": "2025-12-15T21:48:17.974490-05:00",
       "metadata_json": "{\"branch\":\"main\",\"commit\":\"24c0a0eff23a3fa991bcfc0c2c8e3cd89e498830\",\"confidence\":99,\"prompt\":\"REPO: phoenixframework/phoenix | PRs: #1000+ | CHANGELOG: First production release!\"}"
+    },
+    {
+      "id": 36,
+      "change_id": "34fd6d68-6739-4777-8a09-0bb94bef37e2",
+      "node_type": "observation",
+      "title": "Chris McCord's vision: Elixir deserves a Rails-like productive web framework",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:54:29.264893-05:00",
+      "updated_at": "2025-12-15T21:54:29.264893-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"c4ede8c5f71ab74b0c2e9de1eb37d15531d95a46\",\"confidence\":95,\"prompt\":\"Jan 18, 2014: Initial commit creates Router, Mapper, Path modules. Macro-based DSL for routes. Cowboy/Plug foundation. 276 lines of code.\"}"
+    },
+    {
+      "id": 37,
+      "change_id": "ee8d1910-97f8-4a7d-91db-73651273bd67",
+      "node_type": "decision",
+      "title": "Initial Router Architecture: Compile-time vs Runtime matching",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:54:42.487124-05:00",
+      "updated_at": "2025-12-15T21:54:42.487124-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"c4ede8c5f71ab74b0c2e9de1eb37d15531d95a46\",\"confidence\":90,\"prompt\":\"Key decision: Use Elixir macros to generate pattern-matched route functions at compile time. defmatch/defroute_aliases macros create efficient dispatch. Inspired by Rails but leveraging Elixir's metaprogramming.\"}"
+    },
+    {
+      "id": 38,
+      "change_id": "5d1e4f01-1abf-4b80-a20a-bef39b036819",
+      "node_type": "option",
+      "title": "Compile-time macro generation (chosen)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:54:51.683256-05:00",
+      "updated_at": "2025-12-15T21:54:51.683256-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"c4ede8c5f71ab74b0c2e9de1eb37d15531d95a46\",\"confidence\":95,\"prompt\":\"defmatch macro generates pattern-matched functions. Routes become function clauses. Zero runtime route lookup cost. Elixir's pattern matching handles dispatch.\"}"
+    },
+    {
+      "id": 39,
+      "change_id": "22d6f2bc-2270-4e58-9e94-7368404722f2",
+      "node_type": "action",
+      "title": "Add controller dispatch support",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:55:00.183697-05:00",
+      "updated_at": "2025-12-15T21:55:00.183697-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"6e4617199\",\"confidence\":90,\"prompt\":\"Second commit: Router now calls controllers. Pattern: match route -> invoke controller.action. Foundation for MVC pattern in Phoenix.\"}"
+    },
+    {
+      "id": 40,
+      "change_id": "3a67f715-c169-4659-8c84-1187a7d1968f",
+      "node_type": "action",
+      "title": "Add Router tests and 404 handling",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:55:10.474762-05:00",
+      "updated_at": "2025-12-15T21:55:10.474762-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"d91efaf51\",\"confidence\":85,\"prompt\":\"Third commit: Test-driven development from day one. 404 error page handling. Shows Chris's focus on production-ready behavior early.\"}"
+    },
+    {
+      "id": 41,
+      "change_id": "01373514-3c06-4c42-8a5d-9c4bcc4ebad2",
+      "node_type": "decision",
+      "title": "Error handling architecture: GenServer dispatch vs direct call",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:55:12.132881-05:00",
+      "updated_at": "2025-12-15T21:55:12.132881-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"7c2118b16\",\"confidence\":85,\"prompt\":\"Issue #1: Should each request spawn a GenServer process? Chris initially implements GenServer-based dispatch with 500 error pages. Leverages Erlang's let it crash philosophy.\"}"
+    },
+    {
+      "id": 42,
+      "change_id": "40480ea7-d724-412c-a620-eb3aece94546",
+      "node_type": "option",
+      "title": "GenServer per-request dispatch (initial choice)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:55:22.058650-05:00",
+      "updated_at": "2025-12-15T21:55:22.058650-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"2bbb85f2f\",\"confidence\":80,\"prompt\":\"Commit 2bbb85f2f: Dispatcher Client/Server. Kill dispatch process after complete. Closes Issue #1. Each request gets its own process - Erlang's concurrency model.\"}"
+    },
+    {
+      "id": 43,
+      "change_id": "2138334b-fc7c-4e8f-a859-020af7dd1f17",
+      "node_type": "observation",
+      "title": "GenServer approach reconsidered after testing",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:55:31.866430-05:00",
+      "updated_at": "2025-12-15T21:55:31.866430-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"8a3bddfb8\",\"confidence\":85,\"prompt\":\"Commit 8a3bddfb8: Refactor router dispatching to use try/catch in favor of direct message passing. Performance and simplicity won over process isolation for simple request handling.\"}"
+    },
+    {
+      "id": 44,
+      "change_id": "371c6a26-d4b7-420d-91ff-605525576973",
+      "node_type": "action",
+      "title": "Add named splat params in routes (Issue #2)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:55:46.612434-05:00",
+      "updated_at": "2025-12-15T21:55:46.612434-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"9f54676c5\",\"confidence\":85,\"prompt\":\"Commit 9f54676c5: Support for splat params like /files/*path. Closes Issue #2. Enables catch-all routes for file serving, nested paths.\"}"
+    },
+    {
+      "id": 45,
+      "change_id": "a4796aa9-249c-4d95-a5ba-07e0f8fa317a",
+      "node_type": "action",
+      "title": "Add redirect function and named route helpers",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:55:47.462012-05:00",
+      "updated_at": "2025-12-15T21:55:47.462012-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"ae3fff6fb\",\"confidence\":90,\"prompt\":\"Commits 03215ab09, ae3fff6fb: Controller.redirect function. Generated _path and _url helpers with keyword param replacement. Rails-like developer experience taking shape.\"}"
+    },
+    {
+      "id": 46,
+      "change_id": "5142ceae-ed72-43d3-bdd8-68961eb64e70",
+      "node_type": "observation",
+      "title": "First community contribution: darkofabijan joins (PR #8)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:56:01.213306-05:00",
+      "updated_at": "2025-12-15T21:56:01.213306-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"75fed66d6\",\"confidence\":90,\"prompt\":\"Jan 27, 2014: PR #8 from darkofabijan adds 'new' resource route. First external contributor\\\\! Community begins forming around Phoenix. github.com/phoenixframework/phoenix/pull/8\"}"
+    },
+    {
+      "id": 47,
+      "change_id": "3298510a-6228-4d98-9567-13609154a483",
+      "node_type": "action",
+      "title": "PR #12: nurugger07 removes naming module - community cleanup",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:56:11.173052-05:00",
+      "updated_at": "2025-12-15T21:56:11.173052-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"b037343da\",\"confidence\":85,\"prompt\":\"Jan 28, 2014: Second community PR. nurugger07 removes unnecessary Naming module. Community helping refine codebase. github.com/phoenixframework/phoenix/pull/12\"}"
+    },
+    {
+      "id": 48,
+      "change_id": "50def832-6371-4998-b013-96b389e1911c",
+      "node_type": "action",
+      "title": "PR #14: Project generator - mix phoenix.new (darkofabijan)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:56:21.157928-05:00",
+      "updated_at": "2025-12-15T21:56:21.157928-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"39f784fb6\",\"confidence\":95,\"prompt\":\"Jan 29, 2014: darkofabijan creates project generator. 'mix phoenix.new myapp' bootstraps new projects. Critical for adoption - lowers barrier to entry. github.com/phoenixframework/phoenix/pull/14\"}"
+    },
+    {
+      "id": 49,
+      "change_id": "85dbb612-d64b-434f-ac70-ae5ba78c557b",
+      "node_type": "action",
+      "title": "PR #16: Nested resources routing (Chris McCord)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:56:29.780797-05:00",
+      "updated_at": "2025-12-15T21:56:29.780797-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"5a6fffd50\",\"confidence\":90,\"prompt\":\"Jan 31, 2014: Chris adds nested resources. Routes like resources :users do; resources :comments; end. REST maturity. Rails-like nested resource patterns. github.com/phoenixframework/phoenix/pull/16\"}"
+    },
+    {
+      "id": 50,
+      "change_id": "ca6e276b-4980-49b8-af09-01a5aa7cc58d",
+      "node_type": "action",
+      "title": "PR #18: Routes printer - mix phoenix.routes (darkofabijan)",
+      "description": null,
+      "status": "pending",
+      "created_at": "2025-12-15T21:56:39.431337-05:00",
+      "updated_at": "2025-12-15T21:56:39.431337-05:00",
+      "metadata_json": "{\"branch\":\"main\",\"commit\":\"cb1b93aa0\",\"confidence\":85,\"prompt\":\"Feb 2, 2014: darkofabijan adds routes task. 'mix phoenix.routes' shows all defined routes. Debugging and documentation tool. Rails rake routes equivalent. github.com/phoenixframework/phoenix/pull/18\"}"
     }
   ],
   "edges": [
@@ -760,6 +925,160 @@
       "weight": 1.0,
       "rationale": "Next release",
       "created_at": "2025-12-15T21:47:48.541220-05:00"
+    },
+    {
+      "id": 35,
+      "from_node_id": 1,
+      "to_node_id": 36,
+      "from_change_id": "ab6ed7aa-73d7-43cd-ad2f-a67b0154e72a",
+      "to_change_id": "34fd6d68-6739-4777-8a09-0bb94bef37e2",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Founding vision documented",
+      "created_at": "2025-12-15T21:54:40.644695-05:00"
+    },
+    {
+      "id": 36,
+      "from_node_id": 36,
+      "to_node_id": 37,
+      "from_change_id": "34fd6d68-6739-4777-8a09-0bb94bef37e2",
+      "to_change_id": "ee8d1910-97f8-4a7d-91db-73651273bd67",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Architecture flows from vision",
+      "created_at": "2025-12-15T21:54:51.659976-05:00"
+    },
+    {
+      "id": 37,
+      "from_node_id": 37,
+      "to_node_id": 38,
+      "from_change_id": "ee8d1910-97f8-4a7d-91db-73651273bd67",
+      "to_change_id": "5d1e4f01-1abf-4b80-a20a-bef39b036819",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Chosen approach",
+      "created_at": "2025-12-15T21:55:00.162994-05:00"
+    },
+    {
+      "id": 38,
+      "from_node_id": 38,
+      "to_node_id": 39,
+      "from_change_id": "5d1e4f01-1abf-4b80-a20a-bef39b036819",
+      "to_change_id": "22d6f2bc-2270-4e58-9e94-7368404722f2",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Implementation follows",
+      "created_at": "2025-12-15T21:55:10.451112-05:00"
+    },
+    {
+      "id": 39,
+      "from_node_id": 40,
+      "to_node_id": 41,
+      "from_change_id": "3a67f715-c169-4659-8c84-1187a7d1968f",
+      "to_change_id": "01373514-3c06-4c42-8a5d-9c4bcc4ebad2",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Architecture question emerges",
+      "created_at": "2025-12-15T21:55:22.034348-05:00"
+    },
+    {
+      "id": 40,
+      "from_node_id": 41,
+      "to_node_id": 42,
+      "from_change_id": "01373514-3c06-4c42-8a5d-9c4bcc4ebad2",
+      "to_change_id": "40480ea7-d724-412c-a620-eb3aece94546",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Initial implementation",
+      "created_at": "2025-12-15T21:55:31.842489-05:00"
+    },
+    {
+      "id": 41,
+      "from_node_id": 42,
+      "to_node_id": 43,
+      "from_change_id": "40480ea7-d724-412c-a620-eb3aece94546",
+      "to_change_id": "2138334b-fc7c-4e8f-a859-020af7dd1f17",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Learning from implementation",
+      "created_at": "2025-12-15T21:55:46.590146-05:00"
+    },
+    {
+      "id": 42,
+      "from_node_id": 43,
+      "to_node_id": 44,
+      "from_change_id": "2138334b-fc7c-4e8f-a859-020af7dd1f17",
+      "to_change_id": "371c6a26-d4b7-420d-91ff-605525576973",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Feature development continues",
+      "created_at": "2025-12-15T21:55:58.467989-05:00"
+    },
+    {
+      "id": 43,
+      "from_node_id": 44,
+      "to_node_id": 45,
+      "from_change_id": "371c6a26-d4b7-420d-91ff-605525576973",
+      "to_change_id": "a4796aa9-249c-4d95-a5ba-07e0f8fa317a",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Developer experience focus",
+      "created_at": "2025-12-15T21:55:58.475335-05:00"
+    },
+    {
+      "id": 44,
+      "from_node_id": 45,
+      "to_node_id": 46,
+      "from_change_id": "a4796aa9-249c-4d95-a5ba-07e0f8fa317a",
+      "to_change_id": "5142ceae-ed72-43d3-bdd8-68961eb64e70",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Community takes notice",
+      "created_at": "2025-12-15T21:56:11.153468-05:00"
+    },
+    {
+      "id": 45,
+      "from_node_id": 46,
+      "to_node_id": 47,
+      "from_change_id": "5142ceae-ed72-43d3-bdd8-68961eb64e70",
+      "to_change_id": "3298510a-6228-4d98-9567-13609154a483",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Community growing",
+      "created_at": "2025-12-15T21:56:21.142370-05:00"
+    },
+    {
+      "id": 46,
+      "from_node_id": 47,
+      "to_node_id": 48,
+      "from_change_id": "3298510a-6228-4d98-9567-13609154a483",
+      "to_change_id": "50def832-6371-4998-b013-96b389e1911c",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Major developer experience feature",
+      "created_at": "2025-12-15T21:56:29.758486-05:00"
+    },
+    {
+      "id": 47,
+      "from_node_id": 48,
+      "to_node_id": 49,
+      "from_change_id": "50def832-6371-4998-b013-96b389e1911c",
+      "to_change_id": "85dbb612-d64b-434f-ac70-ae5ba78c557b",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "REST API maturity",
+      "created_at": "2025-12-15T21:56:39.409753-05:00"
+    },
+    {
+      "id": 48,
+      "from_node_id": 49,
+      "to_node_id": 50,
+      "from_change_id": "85dbb612-d64b-434f-ac70-ae5ba78c557b",
+      "to_change_id": "ca6e276b-4980-49b8-af09-01a5aa7cc58d",
+      "edge_type": "leads_to",
+      "weight": 1.0,
+      "rationale": "Developer tooling",
+      "created_at": "2025-12-15T21:56:48.299501-05:00"
     }
   ]
 }
