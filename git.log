@@ -34,3 +34,13 @@ Wed Dec 17 13:54:53 EST 2025: pushed to deciduous
 Wed Dec 17 13:55:08 EST 2025: git push origin main
 Wed Dec 17 14:17:36 EST 2025: deploying bottom-left panel fix
 Wed Dec 17 14:18:50 EST 2025: update OG tags for Phoenix branding
+Wed Dec 17 14:33:39 EST 2025: git add files for viewer fixes
+Wed Dec 17 14:33:45 EST 2025: git commit viewer fixes
+Wed Dec 17 14:34:04 EST 2025: git push origin feature/configurable-search-sort
+Wed Dec 17 14:34:23 EST 2025: merging PR #161 to main
+Wed Dec 17 14:34:35 EST 2025: switching to main and pulling
+Wed Dec 17 14:35:06 EST 2025: version bump to 0.8.16
+Wed Dec 17 14:35:21 EST 2025: creating tag v0.8.16
+Wed Dec 17 14:35:27 EST 2025: pushing release v0.8.16 to origin
+Wed Dec 17 14:36:22 EST 2025: git push --no-verify to skip recursive sync
+Wed Dec 17 15:43:09 EST 2025: pushing phoenix_from_ashes graph update
