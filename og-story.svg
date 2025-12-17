@@ -1,0 +1,100 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="phoenixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FD4F00"/>
+      <stop offset="100%" style="stop-color:#F76B1C"/>
+    </linearGradient>
+    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FD4F00"/>
+      <stop offset="100%" style="stop-color:#fed7aa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Light background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Top orange accent bar -->
+  <rect width="1200" height="8" fill="url(#phoenixGrad)"/>
+
+  <!-- Timeline visualization on the right -->
+  <g transform="translate(800, 80)">
+    <!-- Timeline line -->
+    <rect x="40" y="0" width="4" height="420" rx="2" fill="url(#timelineGrad)"/>
+
+    <!-- Timeline nodes -->
+    <circle cx="42" cy="30" r="16" fill="#FD4F00"/>
+    <text x="70" y="26" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" font-weight="600">JAN 2014</text>
+    <text x="70" y="42" font-family="system-ui, sans-serif" font-size="14" fill="#111827" font-weight="700">Initial Commit</text>
+
+    <circle cx="42" cy="100" r="12" fill="#FD4F00" opacity="0.9"/>
+    <text x="70" y="96" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" font-weight="600">APR 2014</text>
+    <text x="70" y="112" font-family="system-ui, sans-serif" font-size="14" fill="#111827" font-weight="700">Channels Born</text>
+
+    <circle cx="42" cy="170" r="10" fill="#FD4F00" opacity="0.8"/>
+    <text x="70" y="166" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" font-weight="600">JUL 2014</text>
+    <text x="70" y="182" font-family="system-ui, sans-serif" font-size="14" fill="#111827" font-weight="700">José Joins</text>
+
+    <circle cx="42" cy="240" r="10" fill="#FD4F00" opacity="0.7"/>
+    <text x="70" y="236" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" font-weight="600">DEC 2014</text>
+    <text x="70" y="252" font-family="system-ui, sans-serif" font-size="14" fill="#111827" font-weight="700">Endpoint Arch</text>
+
+    <circle cx="42" cy="310" r="10" fill="#FD4F00" opacity="0.6"/>
+    <text x="70" y="306" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" font-weight="600">Q1 2015</text>
+    <text x="70" y="322" font-family="system-ui, sans-serif" font-size="14" fill="#111827" font-weight="700">Ecto Integration</text>
+
+    <circle cx="42" cy="400" r="18" fill="#FD4F00"/>
+    <text x="42" y="405" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1.0</text>
+    <text x="70" y="396" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" font-weight="600">AUG 2015</text>
+    <text x="70" y="412" font-family="system-ui, sans-serif" font-size="14" fill="#111827" font-weight="700">Production Ready</text>
+  </g>
+
+  <!-- Phoenix bird icon -->
+  <g transform="translate(80, 120)">
+    <path d="M40 0 C55 20 70 40 55 70 C70 55 78 40 70 20 C85 40 92 70 70 105 C55 85 40 70 40 42 C40 70 28 85 14 105 C-7 70 0 40 14 20 C7 40 14 55 28 70 C14 40 28 20 40 0Z"
+          fill="url(#phoenixGrad)"/>
+  </g>
+
+  <!-- Label -->
+  <text x="80" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#FD4F00" font-weight="700" letter-spacing="0.1em">
+    THE COMPLETE CHRONICLE
+  </text>
+
+  <!-- Title -->
+  <text x="80" y="320" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="52" font-weight="800" fill="#111827">
+    From Ashes to 1.0
+  </text>
+
+  <!-- Subtitle -->
+  <text x="80" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#6b7280">
+    The Phoenix Framework Story
+  </text>
+
+  <!-- Divider line -->
+  <rect x="80" y="395" width="100" height="4" rx="2" fill="#FD4F00"/>
+
+  <!-- Stats row -->
+  <g transform="translate(80, 440)">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="36" fill="#FD4F00" font-weight="700">19</text>
+    <text x="0" y="24" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af" font-weight="500">MONTHS</text>
+
+    <text x="100" y="0" font-family="system-ui, sans-serif" font-size="36" fill="#1f2937" font-weight="700">17</text>
+    <text x="100" y="24" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af" font-weight="500">RELEASES</text>
+
+    <text x="200" y="0" font-family="system-ui, sans-serif" font-size="36" fill="#1f2937" font-weight="700">284</text>
+    <text x="200" y="24" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af" font-weight="500">DECISIONS</text>
+
+    <text x="320" y="0" font-family="system-ui, sans-serif" font-size="36" fill="#1f2937" font-weight="700">100+</text>
+    <text x="320" y="24" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af" font-weight="500">CONTRIBUTORS</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="80" y="540" font-family="system-ui, sans-serif" font-size="16" fill="#9ca3af">
+    Every architectural decision from Chris McCord's first commit
+  </text>
+  <text x="80" y="562" font-family="system-ui, sans-serif" font-size="16" fill="#9ca3af">
+    to the landmark 1.0 release — captured and explorable.
+  </text>
+
+  <!-- Bottom border -->
+  <rect y="622" width="1200" height="8" fill="url(#phoenixGrad)"/>
+</svg>

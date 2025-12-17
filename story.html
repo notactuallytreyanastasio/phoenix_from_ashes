@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Ashes to 1.0: The Phoenix Framework Story</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="From Ashes to 1.0: The Phoenix Framework Story">
+    <meta name="description" content="The complete chronicle of how Chris McCord built Phoenix Framework from a single commit to production-ready 1.0. 19 months, 17 releases, 284 architectural decisions, 100+ contributors. Every choice captured and explorable.">
+    <meta name="author" content="Phoenix From Ashes">
+    <meta name="keywords" content="Phoenix Framework, Elixir, Chris McCord, Jose Valim, web framework, channels, websockets, real-time, history, architecture">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Phoenix From Ashes">
+    <meta property="og:url" content="https://notactuallytreyanastasio.github.io/phoenix_from_ashes/story.html">
+    <meta property="og:title" content="From Ashes to 1.0: The Phoenix Framework Story">
+    <meta property="og:description" content="19 months. 17 releases. 284 decisions. The complete chronicle of Phoenix Framework's journey from Chris McCord's first commit to production-ready 1.0. Every architectural choice captured.">
+    <meta property="og:image" content="https://notactuallytreyanastasio.github.io/phoenix_from_ashes/og-story.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="From Ashes to 1.0: The Phoenix Framework Story - Timeline from Jan 2014 to Aug 2015">
+    <meta property="article:author" content="Phoenix From Ashes">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://notactuallytreyanastasio.github.io/phoenix_from_ashes/story.html">
+    <meta name="twitter:title" content="From Ashes to 1.0: The Phoenix Framework Story">
+    <meta name="twitter:description" content="19 months. 17 releases. 284 decisions. How Chris McCord built Phoenix from first commit to 1.0. Every architectural choice captured and explorable.">
+    <meta name="twitter:image" content="https://notactuallytreyanastasio.github.io/phoenix_from_ashes/og-story.png">
+    <meta name="twitter:image:alt" content="From Ashes to 1.0: The Phoenix Framework Story">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            color: #374151;
+            line-height: 1.7;
+        }
+        .top-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .top-nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-nav-brand {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #FD4F00;
+            text-decoration: none;
+        }
+        .top-nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        .top-nav-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.15s;
+        }
+        .top-nav-links a:hover { color: #FD4F00; }
+        .top-nav-links a.active { color: #FD4F00; }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 40px;
+        }
+        .hero-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #9ca3af;
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #111827;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+        .hero h1 span {
+            color: #FD4F00;
+        }
+        .hero-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .hero-pitch {
+            margin-top: 32px;
+            padding: 24px 32px;
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+            border-radius: 12px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #fed7aa;
+        }
+        .hero-pitch p {
+            font-size: 16px;
+            color: #374151;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .hero-pitch strong {
+            color: #c2410c;
+        }
+
+        .stats-banner {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 24px 0;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-num {
+            display: block;
+            font-size: 28px;
+            font-weight: 700;
+            color: #FD4F00;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 6px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e5e7eb;
+        }
+
+        .timeline-day {
+            position: relative;
+            margin-top: 60px;
+            margin-bottom: 24px;
+        }
+        .timeline-day::before {
+            content: '';
+            position: absolute;
+            left: -42px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #FD4F00;
+            border: 4px solid #ffedd5;
+        }
+        .timeline-day.highlight::before {
+            background: #ea580c;
+            border-color: #fed7aa;
+        }
+        .timeline-day-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: #FD4F00;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .timeline-day.highlight .timeline-day-date {
+            color: #ea580c;
+        }
+        .timeline-day-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111827;
+            margin: 4px 0 0 0;
+        }
+
+        .timeline-event {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -42px;
+            top: 24px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d1d5db;
+        }
+        .event-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .event-header {
+            padding: 20px 24px 16px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .event-time {
+            font-size: 12px;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .event-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin: 4px 0 8px 0;
+        }
+        .event-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            font-size: 11px;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+        .tag-commit {
+            background: #d1fae5;
+            color: #059669;
+            font-family: ui-monospace, monospace;
+        }
+        .tag-pr {
+            background: #dbeafe;
+            color: #2563eb;
+            font-family: ui-monospace, monospace;
+        }
+        .tag-node {
+            background: #ede9fe;
+            color: #7c3aed;
+            font-family: ui-monospace, monospace;
+        }
+        .tag-release {
+            background: #ffedd5;
+            color: #c2410c;
+            font-weight: 600;
+        }
+        .event-body {
+            padding: 20px 24px 24px;
+            font-size: 15px;
+            line-height: 1.75;
+        }
+        .event-body p { margin-bottom: 16px; }
+        .event-body p:last-child { margin-bottom: 0; }
+        .event-body ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        .event-body li { margin-bottom: 8px; }
+        .event-body strong { color: #111827; }
+        .event-body em { color: #6b7280; }
+        .event-body code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: ui-monospace, monospace;
+        }
+
+        .node-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 16px 0;
+        }
+        .node-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .node-type-badge {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        .node-type-goal { background: #f59e0b; }
+        .node-type-decision { background: #8b5cf6; }
+        .node-type-action { background: #3b82f6; }
+        .node-type-outcome { background: #22c55e; }
+        .node-type-observation { background: #6366f1; }
+        .node-type-option { background: #06b6d4; }
+        .node-id-badge {
+            font-size: 12px;
+            font-weight: 600;
+            color: #4b5563;
+            background: #e5e7eb;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: ui-monospace, monospace;
+        }
+        .node-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            line-height: 1.4;
+        }
+        .node-card-desc {
+            font-size: 15px;
+            color: #4b5563;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .commit-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 16px 0;
+            font-family: ui-monospace, monospace;
+            font-size: 13px;
+        }
+        .commit-hash { color: #059669; font-weight: 600; }
+        .commit-message { color: #166534; }
+
+        .quote {
+            margin: 24px 0;
+            padding: 20px 24px;
+            background: #fff7ed;
+            border-left: 4px solid #FD4F00;
+            border-radius: 0 10px 10px 0;
+        }
+        .quote-text {
+            font-size: 15px;
+            font-style: italic;
+            color: #9a3412;
+            line-height: 1.7;
+        }
+        .quote-cite {
+            display: block;
+            font-size: 12px;
+            color: #ea580c;
+            margin-top: 12px;
+            font-style: normal;
+        }
+
+        .option-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .option-box {
+            border-radius: 10px;
+            padding: 16px 18px;
+            border: 2px solid;
+        }
+        .option-box.chosen {
+            background: #f0fdf4;
+            border-color: #22c55e;
+        }
+        .option-box.rejected {
+            background: #fef2f2;
+            border-color: #fca5a5;
+        }
+        .option-box.considered {
+            background: #fefce8;
+            border-color: #fde047;
+        }
+        .option-status {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+        }
+        .option-box.chosen .option-status { color: #22c55e; }
+        .option-box.rejected .option-status { color: #ef4444; }
+        .option-box.considered .option-status { color: #ca8a04; }
+        .option-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+        .option-desc {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .option-reason {
+            font-size: 12px;
+            font-style: italic;
+            color: #9ca3af;
+        }
+
+        .contributor-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+        .contributor-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #c4b5fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #5b21b6;
+            font-size: 18px;
+        }
+        .contributor-info { flex: 1; }
+        .contributor-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+        }
+        .contributor-role {
+            font-size: 13px;
+            color: #7c3aed;
+        }
+
+        .release-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .release-item {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .release-version {
+            font-size: 14px;
+            font-weight: 700;
+            color: #c2410c;
+            font-family: ui-monospace, monospace;
+        }
+        .release-date {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-top: 4px;
+        }
+
+        .feature-timeline {
+            margin: 16px 0;
+            background: #f9fafb;
+            border-radius: 10px;
+            padding: 16px 20px;
+        }
+        .feature-entry {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .feature-entry:last-child { border-bottom: none; }
+        .feature-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #FD4F00;
+            flex-shrink: 0;
+        }
+        .feature-content { flex: 1; }
+        .feature-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+        }
+        .feature-desc {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .architecture-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .arch-box {
+            background: #fff7ed;
+            border: 2px solid #FD4F00;
+            border-radius: 10px;
+            padding: 16px 20px;
+            text-align: center;
+            min-width: 120px;
+        }
+        .arch-box-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #c2410c;
+            font-family: ui-monospace, monospace;
+        }
+        .arch-box-desc {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 6px;
+        }
+        .arch-arrow {
+            font-size: 24px;
+            color: #fed7aa;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 40px;
+            border-top: 2px solid #e5e7eb;
+        }
+        .cta-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+        .cta-desc {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.15s;
+        }
+        .btn-primary {
+            background: #FD4F00;
+            color: #ffffff;
+        }
+        .btn-primary:hover { background: #ea580c; }
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            border: 1px solid #e5e7eb;
+        }
+        .btn-secondary:hover { background: #e5e7eb; }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px 60px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        footer a {
+            color: #6b7280;
+            text-decoration: none;
+        }
+        footer a:hover { color: #FD4F00; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .stats-banner { gap: 24px; }
+            .stat-num { font-size: 24px; }
+            .timeline { padding-left: 40px; }
+            .timeline::before { left: 14px; }
+            .timeline-day::before { left: -32px; width: 12px; height: 12px; }
+            .timeline-event::before { left: -32px; width: 8px; height: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-inner">
+            <a href="./" class="top-nav-brand">PHOENIX FROM ASHES</a>
+            <div class="top-nav-links">
+                <a href="story.html" class="active">Story</a>
+                <a href="./">Decision Graph</a>
+                <a href="https://github.com/phoenixframework/phoenix">Phoenix Repo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <div class="hero-label">The Complete Chronicle</div>
+            <h1>From Ashes to <span>1.0</span></h1>
+            <p class="hero-subtitle">
+                This is the story of Phoenix Framework&mdash;how Chris McCord's vision of a productive
+                Elixir web framework evolved from a single commit into a production-ready platform
+                that would change how developers think about real-time web applications.
+            </p>
+            <div class="hero-pitch">
+                <p>
+                    <strong>19 months. 17 releases. 284 decisions captured.</strong> From the initial commit on
+                    January 18, 2014 to the landmark 1.0 release on August 28, 2015, Phoenix grew from a
+                    Rails-inspired experiment into the framework that proved Elixir could be both productive
+                    <em>and</em> performant. Every architectural decision, every community contribution, every
+                    pivotal moment&mdash;captured in a decision graph you can explore.
+                </p>
+            </div>
+        </header>
+
+        <div class="stats-banner">
+            <div class="stat-item"><span class="stat-num">284</span><span class="stat-label">Decisions</span></div>
+            <div class="stat-item"><span class="stat-num">17</span><span class="stat-label">Releases</span></div>
+            <div class="stat-item"><span class="stat-num">19</span><span class="stat-label">Months</span></div>
+            <div class="stat-item"><span class="stat-num">37</span><span class="stat-label">Key Commits</span></div>
+            <div class="stat-item"><span class="stat-num">100+</span><span class="stat-label">Contributors</span></div>
+        </div>
+
+        <div class="timeline">
+            <!-- ========================================== -->
+            <!-- January 18, 2014: The Beginning -->
+            <!-- ========================================== -->
+            <div class="timeline-day">
+                <div class="timeline-day-date">January 18, 2014</div>
+                <h2 class="timeline-day-title">The First Spark</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">Initial Commit</div>
+                        <h3 class="event-title">Chris McCord's Vision Takes Shape</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-commit">c4ede8c</span>
+                            <span class="tag tag-node">#36</span>
+                            <span class="tag">genesis</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            It started with a belief: <strong>Elixir deserves a Rails-like productive web framework.</strong>
+                            Chris McCord, coming from Ruby on Rails, saw Elixir's potential but missed the developer
+                            experience that made Rails so beloved.
+                        </p>
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-observation">observation</span>
+                                <span class="node-id-badge">#36</span>
+                            </div>
+                            <div class="node-card-title">Chris McCord's vision: Elixir deserves a Rails-like productive web framework</div>
+                            <div class="node-card-desc">Router, Mapper, Path modules. Macro-based DSL for routes. Cowboy/Plug foundation. 276 lines of code.</div>
+                        </div>
+                        <div class="commit-card">
+                            <span class="commit-hash">c4ede8c5f</span>
+                            <span class="commit-message">Initial commit</span>
+                        </div>
+                        <p>
+                            The first commit laid the foundation: <code>Router</code>, <code>Path</code>,
+                            <code>Mapper</code>, and <code>Request</code> modules. A routing DSL inspired by Rails,
+                            but built for Elixir's functional paradigm. Just 276 lines of code that would eventually
+                            become one of the most important web frameworks in the Elixir ecosystem.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">The First Decision</div>
+                        <h3 class="event-title">Router Architecture: Compile-time vs Runtime</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-node">#37</span>
+                            <span class="tag tag-node">#38</span>
+                            <span class="tag">architecture</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            The very first architectural decision would define Phoenix's DNA:
+                        </p>
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#37</span>
+                            </div>
+                            <div class="node-card-title">Initial Router Architecture: Compile-time vs Runtime matching</div>
+                            <div class="node-card-desc">Use Elixir macros to generate pattern-matched route functions at compile time. defmatch/defroute_aliases macros create efficient dispatch.</div>
+                        </div>
+                        <div class="option-comparison">
+                            <div class="option-box chosen">
+                                <div class="option-status">CHOSEN</div>
+                                <div class="option-title">Compile-time Macro Generation</div>
+                                <div class="option-desc">defmatch macro generates pattern-matched functions. Routes become function clauses. Zero runtime route lookup cost.</div>
+                                <div class="option-reason">Elixir's pattern matching handles dispatch</div>
+                            </div>
+                            <div class="option-box rejected">
+                                <div class="option-status">ALTERNATIVE</div>
+                                <div class="option-title">Runtime Route Matching</div>
+                                <div class="option-desc">Store routes in ETS, match at runtime like typical frameworks.</div>
+                                <div class="option-reason">More flexible but slower</div>
+                            </div>
+                        </div>
+                        <p>
+                            This decision&mdash;leveraging Elixir's metaprogramming for compile-time route
+                            generation&mdash;gave Phoenix its speed advantage from day one.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">January 22-27</div>
+                        <h3 class="event-title">Rapid Foundation Building</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-node">#39-45</span>
+                            <span class="tag tag-node">#41-43</span>
+                            <span class="tag">foundation</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            In the first week, Chris shipped at a furious pace, capturing each decision:
+                        </p>
+                        <div class="feature-timeline">
+                            <div class="feature-entry">
+                                <div class="feature-dot"></div>
+                                <div class="feature-content">
+                                    <span class="feature-title">Node #39: Add controller dispatch support</span>
+                                    <span class="feature-desc">&mdash; Pattern: match route &rarr; invoke controller.action. MVC foundation.</span>
+                                </div>
+                            </div>
+                            <div class="feature-entry">
+                                <div class="feature-dot"></div>
+                                <div class="feature-content">
+                                    <span class="feature-title">Node #40: Add Router tests and 404 handling</span>
+                                    <span class="feature-desc">&mdash; TDD from day one. Production-ready error pages early.</span>
+                                </div>
+                            </div>
+                            <div class="feature-entry">
+                                <div class="feature-dot"></div>
+                                <div class="feature-content">
+                                    <span class="feature-title">Node #44: Add named splat params (Issue #2)</span>
+                                    <span class="feature-desc">&mdash; Support for <code>/files/*path</code>. Catch-all routes.</span>
+                                </div>
+                            </div>
+                            <div class="feature-entry">
+                                <div class="feature-dot"></div>
+                                <div class="feature-content">
+                                    <span class="feature-title">Node #45: Redirect function and named route helpers</span>
+                                    <span class="feature-desc">&mdash; Generated <code>_path</code> and <code>_url</code> helpers. Rails-like DX.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#41</span>
+                            </div>
+                            <div class="node-card-title">Error handling architecture: GenServer dispatch vs direct call</div>
+                            <div class="node-card-desc">Issue #1: Should each request spawn a GenServer process?</div>
+                        </div>
+
+                        <p>
+                            Interestingly, the GenServer-per-request approach was initially chosen (#42), then
+                            reconsidered (#43). Commit <code>8a3bddfb8</code> refactored to use try/catch
+                            instead&mdash;performance and simplicity won over process isolation for simple
+                            request handling. The lesson: sometimes the "Erlang way" isn't always the right way.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- Late January: Community Arrives -->
+            <!-- ========================================== -->
+            <div class="timeline-day highlight">
+                <div class="timeline-day-date">January 27-31, 2014</div>
+                <h2 class="timeline-day-title">The Community Takes Flight</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">First Community PRs</div>
+                        <h3 class="event-title">darkofabijan Joins the Project</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-pr">PR #8</span>
+                            <span class="tag tag-pr">PR #14</span>
+                            <span class="tag tag-node">#46-50</span>
+                            <span class="tag">community</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            Nine days after the initial commit, Phoenix got its first community contributor.
+                            <strong>Darko Fabijan (@darkofabijan)</strong> would become instrumental to Phoenix's
+                            early success.
+                        </p>
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-observation">observation</span>
+                                <span class="node-id-badge">#46</span>
+                            </div>
+                            <div class="node-card-title">First community contribution: darkofabijan joins (PR #8)</div>
+                            <div class="node-card-desc">Jan 27, 2014: Adds 'new' resource route. First external contributor! Community begins forming.</div>
+                        </div>
+
+                        <p>
+                            What followed was a rapid succession of PRs that shaped Phoenix's developer experience:
+                        </p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-action">action</span>
+                                <span class="node-id-badge">#48</span>
+                            </div>
+                            <div class="node-card-title">PR #14: Project generator - mix phoenix.new (darkofabijan)</div>
+                            <div class="node-card-desc">'mix phoenix.new myapp' bootstraps new projects. Critical for adoption - lowers barrier to entry.</div>
+                        </div>
+
+                        <div class="commit-card">
+                            <span class="commit-hash">39f784fb6</span>
+                            <span class="commit-message">mix phoenix.new</span>
+                        </div>
+
+                        <p>
+                            The project generator was huge. Rails' <code>rails new</code> was famous for getting
+                            developers productive in seconds. Now Phoenix had the same superpower.
+                        </p>
+
+                        <div class="contributor-card">
+                            <div class="contributor-avatar">DF</div>
+                            <div class="contributor-info">
+                                <div class="contributor-name">Darko Fabijan (@darkofabijan)</div>
+                                <div class="contributor-role">PRs #8, #14, #18, #22 &mdash; Router scope, project generator, routes task</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">February 2-6</div>
+                        <h3 class="event-title">The Community Grows</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-pr">PR #12</span>
+                            <span class="tag tag-pr">PR #18</span>
+                            <span class="tag tag-pr">PR #24</span>
+                            <span class="tag tag-pr">PR #32</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            More contributors arrived, each adding pieces that made Phoenix feel complete:
+                        </p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-action">action</span>
+                                <span class="node-id-badge">#47</span>
+                            </div>
+                            <div class="node-card-title">PR #12: nurugger07 removes naming module - community cleanup</div>
+                            <div class="node-card-desc">Second community PR. Community helping refine codebase.</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-action">action</span>
+                                <span class="node-id-badge">#50</span>
+                            </div>
+                            <div class="node-card-title">PR #18: Routes printer - mix phoenix.routes (darkofabijan)</div>
+                            <div class="node-card-desc">'mix phoenix.routes' shows all defined routes. Rails rake routes equivalent.</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-action">action</span>
+                                <span class="node-id-badge">#52</span>
+                            </div>
+                            <div class="node-card-title">PR #24: Resource :only/:except limiting (nurugger07)</div>
+                            <div class="node-card-desc">Fine-grained resource routes. resources :users, only: [:index, :show]. Rails-like flexibility.</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-action">action</span>
+                                <span class="node-id-badge">#53</span>
+                            </div>
+                            <div class="node-card-title">PR #32: Improve new app experience (cromwellryan)</div>
+                            <div class="node-card-desc">Better onboarding. Install, compile tips in generated project. Third unique contributor!</div>
+                        </div>
+
+                        <p>
+                            The pattern was established: Phoenix would be community-driven. By the end of the
+                            first month, three distinct contributors had shaped the codebase.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">February 6</div>
+                        <h3 class="event-title">The Scope Macro</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-commit">83344fc</span>
+                            <span class="tag tag-node">#54</span>
+                            <span class="tag tag-node">#92</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#54</span>
+                            </div>
+                            <div class="node-card-title">Route organization: Scope macro for namespacing</div>
+                            <div class="node-card-desc">Namespace routes under paths like scope '/admin' do. Organizes large apps. Admin panels, API versioning patterns emerge.</div>
+                        </div>
+                        <pre style="background: #1e293b; color: #f1f5f9; padding: 20px 24px; border-radius: 10px; font-size: 15px; line-height: 1.6; overflow-x: auto; margin: 16px 0;"><code>scope "/api", Api do
+  resources "/users", UserController
+end
+
+scope "/admin", Admin do
+  resources "/posts", PostController
+end</code></pre>
+                        <p>
+                            This small addition had outsized impact. It made Phoenix's router feel immediately
+                            familiar to Rails developers while enabling clean API versioning and admin namespaces.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- April 2014: Channels -->
+            <!-- ========================================== -->
+            <div class="timeline-day highlight">
+                <div class="timeline-day-date">April 30, 2014</div>
+                <h2 class="timeline-day-title">The Killer Feature</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">v0.2.0</div>
+                        <h3 class="event-title">Phoenix Channels Are Born</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-release">v0.2.0</span>
+                            <span class="tag tag-commit">10ac0e1</span>
+                            <span class="tag tag-node">#13-16</span>
+                            <span class="tag tag-node">#55-57</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            On the same day as the first public release (v0.1.1), Chris shipped v0.2.0 with
+                            what would become Phoenix's signature feature: <strong>Channels</strong>.
+                        </p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#13</span>
+                            </div>
+                            <div class="node-card-title">Real-time Communication Strategy</div>
+                            <div class="node-card-desc">How to differentiate Phoenix: WebSocket-based real-time features leveraging Erlang's concurrent strengths</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-outcome">outcome</span>
+                                <span class="node-id-badge">#16</span>
+                            </div>
+                            <div class="node-card-title">v0.2.0 - Channels introduced!</div>
+                            <div class="node-card-desc">Phoenix's killer feature - real-time WebSocket abstraction that becomes the framework's signature capability</div>
+                        </div>
+
+                        <p>
+                            The architecture was elegant, built on foundations laid in March:
+                        </p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#56</span>
+                            </div>
+                            <div class="node-card-title">Channel abstraction design: Topics, Events, Messages</div>
+                            <div class="node-card-desc">Introduce Topic as pub/sub layer. Channels multiplex over Topics. Events are named messages. This abstraction becomes Phoenix's signature pattern.</div>
+                        </div>
+
+                        <div class="architecture-diagram">
+                            <div class="arch-box">
+                                <div class="arch-box-title">Transport</div>
+                                <div class="arch-box-desc">WebSocket, LongPoll</div>
+                            </div>
+                            <span class="arch-arrow">&rarr;</span>
+                            <div class="arch-box">
+                                <div class="arch-box-title">Socket</div>
+                                <div class="arch-box-desc">Connection state</div>
+                            </div>
+                            <span class="arch-arrow">&rarr;</span>
+                            <div class="arch-box">
+                                <div class="arch-box-title">Channel</div>
+                                <div class="arch-box-desc">Topic handlers</div>
+                            </div>
+                            <span class="arch-arrow">&rarr;</span>
+                            <div class="arch-box">
+                                <div class="arch-box-title">PubSub</div>
+                                <div class="arch-box-desc">Broadcasting</div>
+                            </div>
+                        </div>
+
+                        <div class="quote">
+                            <div class="quote-text">
+                                2 million WebSocket connections on a single server. That's not a theoretical
+                                benchmark&mdash;that's what Phoenix could actually do.
+                            </div>
+                            <cite class="quote-cite">&mdash; The benchmark that made Phoenix famous</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">Channel Decisions</div>
+                        <h3 class="event-title">Design Choices That Mattered</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-node">#59-64</span>
+                            <span class="tag">architecture</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>Several key decisions shaped how Channels worked:</p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#59</span>
+                            </div>
+                            <div class="node-card-title">Channel message serialization format</div>
+                        </div>
+
+                        <div class="option-comparison">
+                            <div class="option-box chosen">
+                                <div class="option-status">CHOSEN</div>
+                                <div class="option-title">JSON Serialization (#60)</div>
+                                <div class="option-desc">Standard, human-readable, easy debugging</div>
+                            </div>
+                            <div class="option-box rejected">
+                                <div class="option-status">CONSIDERED</div>
+                                <div class="option-title">Binary Protocol (#61)</div>
+                                <div class="option-desc">Erlang term format - more efficient but harder to debug, less portable</div>
+                            </div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#62</span>
+                            </div>
+                            <div class="node-card-title">Channel transport layer</div>
+                        </div>
+
+                        <div class="option-comparison">
+                            <div class="option-box chosen">
+                                <div class="option-status">PRIMARY</div>
+                                <div class="option-title">WebSocket (#63)</div>
+                                <div class="option-desc">Native browser support, full-duplex, Cowboy integration</div>
+                            </div>
+                            <div class="option-box considered">
+                                <div class="option-status">FALLBACK</div>
+                                <div class="option-title">LongPolling (#64)</div>
+                                <div class="option-desc">For browsers without WebSocket support - added in v0.6.0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- July 2014: Jose Valim -->
+            <!-- ========================================== -->
+            <div class="timeline-day highlight">
+                <div class="timeline-day-date">July 2014</div>
+                <h2 class="timeline-day-title">The Creator of Elixir Joins</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">PRs #144 & #145</div>
+                        <h3 class="event-title">Jos&eacute; Valim Becomes Core Contributor</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-pr">PR #144</span>
+                            <span class="tag tag-pr">PR #145</span>
+                            <span class="tag tag-node">#19</span>
+                            <span class="tag">milestone</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            When the creator of Elixir starts contributing to your web framework, it signals
+                            something special.
+                        </p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-observation">observation</span>
+                                <span class="node-id-badge">#19</span>
+                            </div>
+                            <div class="node-card-title">Jos&eacute; Valim joins Phoenix development (PR #144, #145 - July 2014)</div>
+                            <div class="node-card-desc">Core Elixir creator contributes performance improvements - massive validation of framework direction.</div>
+                        </div>
+
+                        <div class="contributor-card">
+                            <div class="contributor-avatar">JV</div>
+                            <div class="contributor-info">
+                                <div class="contributor-name">Jos&eacute; Valim (@josevalim)</div>
+                                <div class="contributor-role">Creator of Elixir, core Phoenix contributor</div>
+                            </div>
+                        </div>
+
+                        <p>
+                            Jos&eacute;'s involvement brought deep language expertise. He contributed the
+                            <code>{:safe, ...}</code> HTML safety tuple (from discussions in Issue #11),
+                            response helpers, the JSON generator, Ecto integration work, and the Phoenix.Endpoint
+                            architecture. His presence validated Phoenix as <em>the</em> framework for Elixir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- November-December 2014: Endpoint -->
+            <!-- ========================================== -->
+            <div class="timeline-day">
+                <div class="timeline-day-date">November - December 2014</div>
+                <h2 class="timeline-day-title">The Endpoint Revolution</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">v0.6.0 - v0.7.0</div>
+                        <h3 class="event-title">PubSub, LongPolling, and Phoenix.Endpoint</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-release">v0.6.0</span>
+                            <span class="tag tag-release">v0.7.0</span>
+                            <span class="tag tag-node">#24-26</span>
+                            <span class="tag tag-node">#68-71</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-outcome">outcome</span>
+                                <span class="node-id-badge">#24</span>
+                            </div>
+                            <div class="node-card-title">v0.6.0 - PubSub, LongPolling transport (Nov 22, 2014)</div>
+                            <div class="node-card-desc">PR #419: Topic&rarr;PubSub rename. LongPoller for WebSocket fallback.</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#25</span>
+                            </div>
+                            <div class="node-card-title">Phoenix.Endpoint Architecture (Dec 2014)</div>
+                            <div class="node-card-desc">PR #517 josevalim: MAJOR: Centralize HTTP entry in Endpoint, not Router. Better OTP app structure.</div>
+                        </div>
+
+                        <p>The Endpoint architecture was a major refactor that established Phoenix's <strong>plug pipeline</strong> pattern:</p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#69</span>
+                            </div>
+                            <div class="node-card-title">Plug pipeline architecture</div>
+                            <div class="node-card-desc">How to compose middleware for request processing?</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-option">option</span>
+                                <span class="node-id-badge">#70</span>
+                            </div>
+                            <div class="node-card-title">Plug composition (chosen)</div>
+                            <div class="node-card-desc">Functional middleware pipeline - call/2 convention</div>
+                        </div>
+
+                        <pre style="background: #1e293b; color: #f1f5f9; padding: 20px 24px; border-radius: 10px; font-size: 15px; line-height: 1.6; overflow-x: auto; margin: 16px 0;"><code>pipeline :browser do
+  plug :accepts, ["html"]
+  plug :fetch_session
+  plug :protect_from_forgery
+end
+
+pipeline :api do
+  plug :accepts, ["json"]
+end</code></pre>
+
+                        <p>
+                            Each plug was a simple module with <code>init/1</code> and <code>call/2</code>.
+                            No magic&mdash;just function composition. The request/response cycle became
+                            transparent and testable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- Q1 2015: Ecosystem -->
+            <!-- ========================================== -->
+            <div class="timeline-day">
+                <div class="timeline-day-date">Q1 2015</div>
+                <h2 class="timeline-day-title">The Ecosystem Crystallizes</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">v0.9.0 - v0.10.0</div>
+                        <h3 class="event-title">Phoenix.HTML & Ecto Integration</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-release">v0.9.0</span>
+                            <span class="tag tag-release">v0.10.0</span>
+                            <span class="tag tag-node">#28-29</span>
+                            <span class="tag tag-node">#72-74</span>
+                            <span class="tag tag-node">#81-83</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            Two key extractions defined Phoenix's approach to modularity:
+                        </p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-outcome">outcome</span>
+                                <span class="node-id-badge">#28</span>
+                            </div>
+                            <div class="node-card-title">v0.9.0 - Phoenix.HTML extraction (Feb 12, 2015)</div>
+                            <div class="node-card-desc">Phoenix.HTML extracted as separate lib, form helpers improved, error pages enhanced</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-action">action</span>
+                                <span class="node-id-badge">#83</span>
+                            </div>
+                            <div class="node-card-title">Extract Phoenix.HTML as separate package</div>
+                            <div class="node-card-desc">Modular design - HTML helpers can be used outside Phoenix</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#72</span>
+                            </div>
+                            <div class="node-card-title">Database integration strategy</div>
+                        </div>
+
+                        <div class="option-comparison">
+                            <div class="option-box chosen">
+                                <div class="option-status">CHOSEN</div>
+                                <div class="option-title">Ecto as first-class citizen (#73)</div>
+                                <div class="option-desc">Deep integration with Ecto for schemas, queries, changesets</div>
+                            </div>
+                            <div class="option-box rejected">
+                                <div class="option-status">CONSIDERED</div>
+                                <div class="option-title">Database agnostic (#74)</div>
+                                <div class="option-desc">Support multiple ORMs - more flexible but less integrated</div>
+                            </div>
+                        </div>
+
+                        <p>
+                            This "extraction" pattern meant Phoenix wasn't a monolith. You could use
+                            Phoenix.HTML without Phoenix. You could use Ecto without Phoenix. The ecosystem
+                            was composable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">PubSub Design</div>
+                        <h3 class="event-title">Distributed Broadcasting</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-node">#78-80</span>
+                            <span class="tag">pubsub</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#78</span>
+                            </div>
+                            <div class="node-card-title">PubSub backend architecture</div>
+                            <div class="node-card-desc">How to distribute messages across nodes?</div>
+                        </div>
+
+                        <div class="option-comparison">
+                            <div class="option-box chosen">
+                                <div class="option-status">DEFAULT</div>
+                                <div class="option-title">pg2 (Erlang process groups) (#79)</div>
+                                <div class="option-desc">Built-in Erlang distributed messaging. Zero dependencies.</div>
+                            </div>
+                            <div class="option-box considered">
+                                <div class="option-status">OPTION</div>
+                                <div class="option-title">Redis adapter (#80)</div>
+                                <div class="option-desc">For deployments across separate clusters</div>
+                            </div>
+                        </div>
+
+                        <p>
+                            The adapter pattern meant Phoenix Channels could scale horizontally. Broadcast
+                            a message on one node, every connected client on every node receives it.
+                            This was the foundation for million-connection deployments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- Summer 2015: Road to 1.0 -->
+            <!-- ========================================== -->
+            <div class="timeline-day">
+                <div class="timeline-day-date">Summer 2015</div>
+                <h2 class="timeline-day-title">The Road to 1.0</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">v0.13.0 - v0.17.0</div>
+                        <h3 class="event-title">Rapid Release Cadence</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-node">#30-34</span>
+                            <span class="tag tag-node">#84-86</span>
+                            <span class="tag">releases</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            Five releases in four months, each polishing APIs and stabilizing interfaces:
+                        </p>
+
+                        <div class="release-grid">
+                            <div class="release-item">
+                                <div class="release-version">v0.13.0</div>
+                                <div class="release-date">May 11</div>
+                            </div>
+                            <div class="release-item">
+                                <div class="release-version">v0.14.0</div>
+                                <div class="release-date">Jun 29</div>
+                            </div>
+                            <div class="release-item">
+                                <div class="release-version">v0.15.0</div>
+                                <div class="release-date">Jul 27</div>
+                            </div>
+                            <div class="release-item">
+                                <div class="release-version">v0.16.0</div>
+                                <div class="release-date">Aug 5</div>
+                            </div>
+                            <div class="release-item">
+                                <div class="release-version">v0.17.0</div>
+                                <div class="release-date">Aug 19</div>
+                            </div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#84</span>
+                            </div>
+                            <div class="node-card-title">API stability commitment for 1.0</div>
+                            <div class="node-card-desc">What level of backward compatibility to promise?</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-observation">observation</span>
+                                <span class="node-id-badge">#86</span>
+                            </div>
+                            <div class="node-card-title">Rapid pre-1.0 iteration enabled by version number</div>
+                            <div class="node-card-desc">0.x versions allowed breaking changes, community accepted this</div>
+                        </div>
+
+                        <p>
+                            The 0.x versions gave Phoenix freedom to break things and experiment. The
+                            community understood this trade-off, and it enabled the rapid evolution that
+                            made 1.0 so solid.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- August 28, 2015: The 1.0 Release -->
+            <!-- ========================================== -->
+            <div class="timeline-day highlight">
+                <div class="timeline-day-date">August 28, 2015</div>
+                <h2 class="timeline-day-title">Phoenix 1.0</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">Release 1.0.0</div>
+                        <h3 class="event-title">Production Ready</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-release">v1.0.0</span>
+                            <span class="tag tag-commit">9d999fb</span>
+                            <span class="tag tag-node">#95-97</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            <strong>19 months after the first commit, Phoenix reached 1.0.</strong>
+                        </p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-outcome">outcome</span>
+                                <span class="node-id-badge">#95</span>
+                            </div>
+                            <div class="node-card-title">v1.0.0 - Production Ready (Aug 28, 2015)</div>
+                            <div class="node-card-desc">MAJOR MILESTONE: Phoenix reaches 1.0! Stable API, production ready, community proven.</div>
+                        </div>
+
+                        <div class="commit-card">
+                            <span class="commit-hash">9d999fb45</span>
+                            <span class="commit-message">Release 1.0.0</span>
+                        </div>
+
+                        <p>What shipped wasn't just a framework&mdash;it was a complete platform:</p>
+                        <ul>
+                            <li><strong>Channels</strong>: Real-time WebSocket communication with LongPolling fallback</li>
+                            <li><strong>PubSub</strong>: Distributed message broadcasting across nodes</li>
+                            <li><strong>Ecto Integration</strong>: First-class database support with changesets</li>
+                            <li><strong>Live Reload</strong>: Instant feedback during development</li>
+                            <li><strong>Generators</strong>: Scaffold entire features in seconds</li>
+                            <li><strong>Plug Pipeline</strong>: Composable request processing</li>
+                        </ul>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-observation">observation</span>
+                                <span class="node-id-badge">#96</span>
+                            </div>
+                            <div class="node-card-title">18 months from initial commit to 1.0</div>
+                            <div class="node-card-desc">Jan 2014 to Aug 2015 - rapid development cycle</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-observation">observation</span>
+                                <span class="node-id-badge">#97</span>
+                            </div>
+                            <div class="node-card-title">Community driven - 100+ contributors by 1.0</div>
+                            <div class="node-card-desc">Open source success story - from solo project to community effort</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- Legacy Section -->
+            <!-- ========================================== -->
+            <div class="timeline-day">
+                <div class="timeline-day-date">The Legacy</div>
+                <h2 class="timeline-day-title">What Phoenix Changed</h2>
+            </div>
+
+            <div class="timeline-event">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-time">Beyond 1.0</div>
+                        <h3 class="event-title">The Story Continues</h3>
+                        <div class="event-tags">
+                            <span class="tag tag-node">#98-101</span>
+                            <span class="tag">liveview</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p>
+                            Phoenix 1.0 was just the beginning. The graph captures the seeds of what came next:
+                        </p>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-decision">decision</span>
+                                <span class="node-id-badge">#99</span>
+                            </div>
+                            <div class="node-card-title">Live features strategy</div>
+                            <div class="node-card-desc">How to enable rich interactive UIs without JavaScript frameworks?</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-option">option</span>
+                                <span class="node-id-badge">#100</span>
+                            </div>
+                            <div class="node-card-title">Server-rendered with WebSocket updates</div>
+                            <div class="node-card-desc">Leverage Channels for live DOM updates - becomes LiveView</div>
+                        </div>
+
+                        <div class="node-card">
+                            <div class="node-badges">
+                                <span class="node-type-badge node-type-observation">observation</span>
+                                <span class="node-id-badge">#101</span>
+                            </div>
+                            <div class="node-card-title">Channels architecture enables LiveView</div>
+                            <div class="node-card-desc">The foundation laid in 2014 made LiveView possible in 2018</div>
+                        </div>
+
+                        <div class="quote">
+                            <div class="quote-text">
+                                When we look at LiveView today, we can trace a direct line back to
+                                those first Channel experiments in 2014. The architectural choices
+                                compound over time.
+                            </div>
+                            <cite class="quote-cite">&mdash; The power of good foundations</cite>
+                        </div>
+
+                        <p>
+                            The decisions made in those first 19 months&mdash;the focus on real-time,
+                            the process-per-connection model, the plug pipeline, the community-first
+                            approach&mdash;created the foundation for everything that followed: Presence,
+                            Contexts, LiveView, HEEx, and beyond.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="cta-section">
+            <h2 class="cta-title">Explore the Full Decision Graph</h2>
+            <p class="cta-desc">
+                284 decisions. 200+ connections. Every architectural choice, every community contribution,
+                every pivotal moment&mdash;captured and queryable.
+            </p>
+            <div class="cta-buttons">
+                <a href="./" class="btn btn-primary">View Decision Graph</a>
+                <a href="https://github.com/phoenixframework/phoenix" class="btn btn-secondary">Phoenix Repository</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>
+            <strong>Phoenix From Ashes</strong> &mdash; A Decision Graph Museum<br>
+            Built with <a href="https://github.com/notactuallytreyanastasio/deciduous">Deciduous</a> |
+            <a href="https://phoenixframework.org">Phoenix Framework</a>
+        </p>
+    </footer>
+</body>
+</html>
