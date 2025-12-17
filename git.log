@@ -15,3 +15,7 @@ Tue Dec 16 02:35:34 EST 2025: Syncing graph - 350 nodes
 Tue Dec 16 02:36:32 EST 2025: Final sync - ~355 nodes
 Tue Dec 16 08:17:21 EST 2025: Fixed OG tags in index.html
 Tue Dec 16 08:18:36 EST 2025: Enriching graph connections
+Wed Dec 17 10:56:44 EST 2025: git add .deciduous/deciduous.db docs/graph-data.json
+Wed Dec 17 10:56:46 EST 2025: git commit
+Wed Dec 17 10:56:54 EST 2025: git push origin main
+Wed Dec 17 13:30:24 EST 2025: git add .deciduous/deciduous.db docs/graph-data.json
