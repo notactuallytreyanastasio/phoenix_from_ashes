@@ -19,3 +19,11 @@ Wed Dec 17 10:56:44 EST 2025: git add .deciduous/deciduous.db docs/graph-data.js
 Wed Dec 17 10:56:46 EST 2025: git commit
 Wed Dec 17 10:56:54 EST 2025: git push origin main
 Wed Dec 17 13:30:24 EST 2025: git add .deciduous/deciduous.db docs/graph-data.json
+Wed Dec 17 13:30:30 EST 2025: git commit
+Wed Dec 17 13:30:34 EST 2025: git push origin main
+Wed Dec 17 13:38:45 EST 2025: cd /Users/robert.grayson1/code/deciduous
+Wed Dec 17 13:39:34 EST 2025: git checkout -b feature/configurable-search-sort
+Wed Dec 17 13:42:18 EST 2025: git add web/src files for search sort feature
+Wed Dec 17 13:42:25 EST 2025: git commit search sort feature
+Wed Dec 17 13:43:21 EST 2025: git push origin feature/configurable-search-sort
+Wed Dec 17 13:45:16 EST 2025: git add docs/index.html
