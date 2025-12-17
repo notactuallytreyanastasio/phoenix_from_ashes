@@ -44,3 +44,5 @@ Wed Dec 17 14:35:21 EST 2025: creating tag v0.8.16
 Wed Dec 17 14:35:27 EST 2025: pushing release v0.8.16 to origin
 Wed Dec 17 14:36:22 EST 2025: git push --no-verify to skip recursive sync
 Wed Dec 17 15:43:09 EST 2025: pushing phoenix_from_ashes graph update
+Wed Dec 17 16:59:17 EST 2025: built deciduous web viewer with chain search
+Wed Dec 17 17:03:49 EST 2025: deciduous v0.8.20 released, rebuilt phoenix viewer
